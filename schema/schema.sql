@@ -5,7 +5,6 @@ DROP TABLE IF EXISTS abilities;
 DROP TABLE IF EXISTS egg_groups;
 DROP TABLE IF EXISTS pokemon;
 DROP TABLE IF EXISTS held_items;
-DROP TABLE IF EXISTS move_categories;
 DROP TABLE IF EXISTS moves;
 
 CREATE TABLE regions (
@@ -62,29 +61,11 @@ CREATE TABLE held_items (
 	name varchar(255) UNIQUE not null
 );
 
-CREATE TABLE move_categories (
-	id serial primary key,
-	name varchar(255) UNIQUE not null
-);
-
 CREATE TABLE moves (
 	id serial primary key,
-	name varchar(255) not null,
-	type_id integer references types on delete cascade not null,
-	move_category_id integer references move_categories on delete cascade not null,
-	power integer,
-	accuracy integer CONSTRAINT valid_accuracy CHECK (accuracy >= 0 AND accuracy <= 100),
-	pp integer
+	name varchar(255) not null
 
 	unique(name)
-);
-
-CREATE TABLE pokemon_moves (
-	id serial primary key,
-	pokemon_id integer references pokemon on delete cascade not null,
-	move_id integer references moves on delete cascade not null
-
-	unique(pokemon_id, move_id) 
 );
 
 
