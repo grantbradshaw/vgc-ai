@@ -69,7 +69,7 @@ CREATE TABLE moves (
 
 CREATE TABLE regulations (
 	id serial primary key,
-	name varchar(255) UNIQUE not null
+	name varchar(1) UNIQUE not null
 );
 
 
