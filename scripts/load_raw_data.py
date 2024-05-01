@@ -62,6 +62,13 @@ def initialize_data():
 			for row in moves_reader:
 				conn.execute(text("INSERT INTO moves (name) VALUES ('{}')".format(row[0].replace("'", "''"))))
 
+		conn.execute(text("DELETE FROM regulations"))
+		conn.execute(text("ALTER SEQUENCE regulations_id_seq RESTART WITH 1"))
+		with open("data/regulations.json") as regulations_infile:
+			regulations = json.load(regulations_infile)
+			for regulation in regulations:
+				conn.execute(text("INSERT INTO regulations (name) VALUES ('{}')".format(regulation)))
+
 		conn.execute(text("DELETE FROM pokemon"))
 		conn.execute(text("ALTER SEQUENCE pokemon_id_seq RESTART WITH 1"))
 		pokemon_df = pd.read_csv("data/pokemon.csv")

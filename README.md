@@ -18,6 +18,7 @@ All data is accurate for generation 9. The files in `data/` are manually transcr
 ## Future Work
 - "Production" Database
 	- Fill out details of moves & create a many to many table to reflect learnsets of Pokemon.
+- Create a table to reflect thfe actual set of legal Pokemon in each regulation.
 
 ## References
 - Bulbapedia, under https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Copyrights
