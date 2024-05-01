@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS egg_groups;
 DROP TABLE IF EXISTS pokemon;
 DROP TABLE IF EXISTS held_items;
 DROP TABLE IF EXISTS moves;
+DROP TABLE IF EXISTS regulations;
 
 CREATE TABLE regions (
 	id serial primary key,
@@ -63,9 +64,12 @@ CREATE TABLE held_items (
 
 CREATE TABLE moves (
 	id serial primary key,
-	name varchar(255) not null,
+	name varchar(255) UNIQUE not null,
+);
 
-	unique(name)
+CREATE TABLE regulations (
+	id serial primary key,
+	name varchar(255) UNIQUE not null
 );
 
 
