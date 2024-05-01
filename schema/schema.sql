@@ -7,8 +7,8 @@ DROP TABLE IF EXISTS pokemon;
 DROP TABLE IF EXISTS held_items;
 DROP TABLE IF EXISTS moves;
 DROP TABLE IF EXISTS regulations;
-DROP TABLE IF EXISTS competitive_pokemon;
 DROP TABLE IF EXISTS teams;
+DROP TABLE IF EXISTS competitive_pokemon;
 
 CREATE TABLE regions (
 	id serial primary key,
