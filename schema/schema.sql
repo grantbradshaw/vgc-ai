@@ -106,7 +106,8 @@ CREATE TABLE teams (
 	competitive_pokemon_3_id integer references competitive_pokemon on delete cascade not null,
 	competitive_pokemon_4_id integer references competitive_pokemon on delete cascade not null,
 	competitive_pokemon_5_id integer references competitive_pokemon on delete cascade not null,
-	competitive_pokemon_6_id integer references competitive_pokemon on delete cascade not null
+	competitive_pokemon_6_id integer references competitive_pokemon on delete cascade not null,
+	paste_url varchar(255) UNIQUE
 );
 
 
