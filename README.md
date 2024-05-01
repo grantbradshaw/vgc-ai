@@ -2,6 +2,7 @@
 - python3 -m venv vgc-ai-env
 - Can run schema.sql directly in your database. 
 - Currently only written to run on local. Add a .env file with the appropriate environment variables
+- Rename `data/ladder_dump_public.csv` to `data/ladder_dump.csv` (my personal file used includes teams that are not publicly available)
 
 ## Executing Code
 All code is intended to be executed from root. Use `python3 -m scripts.load_raw_data` (for instance) to execute scripts directly.

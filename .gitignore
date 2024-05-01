@@ -1,3 +1,4 @@
 .DS_Store
 .env
 vgc-ai-env/
+data/ladder_dump.csv
