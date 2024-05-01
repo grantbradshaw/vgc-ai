@@ -63,7 +63,7 @@ CREATE TABLE held_items (
 
 CREATE TABLE moves (
 	id serial primary key,
-	name varchar(255) not null
+	name varchar(255) not null,
 
 	unique(name)
 );
