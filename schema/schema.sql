@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS pokemon;
 DROP TABLE IF EXISTS held_items;
 DROP TABLE IF EXISTS moves;
 DROP TABLE IF EXISTS regulations;
+DROP TABLE IF EXISTS team_references;
 DROP TABLE IF EXISTS teams;
 DROP TABLE IF EXISTS competitive_pokemon;
 
@@ -40,7 +41,7 @@ CREATE TABLE pokemon (
 	name varchar(255) not null,
 	region_id integer references regions on delete cascade not null,
 	variant varchar(255),
-	national_dex_number smallint not null,
+	national_dex_number smallint UNIQUE not null,
 	type_1_id integer references types on delete cascade not null ,
 	type_2_id integer references types on delete cascade,
 	ability_1_id integer references abilities on delete cascade not null ,
@@ -56,7 +57,7 @@ CREATE TABLE pokemon (
 	special_defense smallint not null,
 	speed smallint not null
 
-	unique(national_dex_number,variant,region_id)
+	unique(name,variant,region_id)
 );
 
 CREATE TABLE held_items (
@@ -108,6 +109,12 @@ CREATE TABLE teams (
 	competitive_pokemon_5_id integer references competitive_pokemon on delete cascade not null,
 	competitive_pokemon_6_id integer references competitive_pokemon on delete cascade not null,
 	paste_url varchar(255) UNIQUE
+);
+
+CREATE TABLE team_references (
+	id serial primary key,
+	team_id integer references teams on delete cascade not null,
+	reference varchar(255) not null
 );
 
 
