@@ -71,20 +71,21 @@ def initialize_data():
 
 		conn.execute(text("DELETE FROM pokemon"))
 		conn.execute(text("ALTER SEQUENCE pokemon_id_seq RESTART WITH 1"))
+
 		pokemon_df = pd.read_csv("data/pokemon.csv")
 		pokemon_df["Ability 1"] = pokemon_df["Ability 1"].str.replace("'", "''")
 		pokemon_df["Ability 2"] = pokemon_df["Ability 2"].str.replace("'", "''")
 		pokemon_df["Hidden Ability"] = pokemon_df["Hidden Ability"].str.replace("'", "''")
 		# allow_none is only set to True if it is possible for this value to be null for a Pokemon
 		# put differently, it is assumed that data/pokemon.csv is formatted properly, and error handling will happen gracelessly in get_fk_id
-		pokemon_df["region_id"] = pokemon_df["Original Region"].apply(lambda x: get_fk_id("regions", x))
-		pokemon_df["type_1_id"] = pokemon_df["Type 1"].apply(lambda x: get_fk_id("types", x))
-		pokemon_df["type_2_id"] = pokemon_df["Type 2"].apply(lambda x: get_fk_id("types", x, allow_none=True))
-		pokemon_df["ability_1_id"] = pokemon_df["Ability 1"].apply(lambda x: get_fk_id("abilities", x))
-		pokemon_df["ability_2_id"] = pokemon_df["Ability 2"].apply(lambda x: get_fk_id("abilities", x, allow_none=True))
-		pokemon_df["hidden_ability_id"] = pokemon_df["Hidden Ability"].apply(lambda x: get_fk_id("abilities", x, allow_none=True))
-		pokemon_df["egg_group_1_id"] = pokemon_df["Egg Group 1"].apply(lambda x: get_fk_id("egg_groups", x))
-		pokemon_df["egg_group_2_id"] = pokemon_df["Egg Group 2"].apply(lambda x: get_fk_id("egg_groups", x, allow_none=True))
+		pokemon_df["region_id"] = pokemon_df["Original Region"].apply(lambda x: get_fk_id("regions", x, conn_arg=conn))
+		pokemon_df["type_1_id"] = pokemon_df["Type 1"].apply(lambda x: get_fk_id("types", x, conn_arg=conn))
+		pokemon_df["type_2_id"] = pokemon_df["Type 2"].apply(lambda x: get_fk_id("types", x, conn_arg=conn, allow_none=True))
+		pokemon_df["ability_1_id"] = pokemon_df["Ability 1"].apply(lambda x: get_fk_id("abilities", x, conn_arg=conn))
+		pokemon_df["ability_2_id"] = pokemon_df["Ability 2"].apply(lambda x: get_fk_id("abilities", x, conn_arg=conn, allow_none=True))
+		pokemon_df["hidden_ability_id"] = pokemon_df["Hidden Ability"].apply(lambda x: get_fk_id("abilities", x, conn_arg=conn, allow_none=True))
+		pokemon_df["egg_group_1_id"] = pokemon_df["Egg Group 1"].apply(lambda x: get_fk_id("egg_groups", x, conn_arg=conn))
+		pokemon_df["egg_group_2_id"] = pokemon_df["Egg Group 2"].apply(lambda x: get_fk_id("egg_groups", x, conn_arg=conn, allow_none=True))
 
 		# finally, we remap our DataFrame columns to align with our DB columns
 		pokemon_df = pokemon_df.rename(columns={
