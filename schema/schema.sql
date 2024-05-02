@@ -96,7 +96,8 @@ CREATE TABLE competitive_pokemon (
 	move_3_id integer references moves on delete cascade,
 	move_4_id integer references moves on delete cascade,
 
-	CONSTRAINT valid_evs CHECK ((hp_evs + attack_evs + defense_evs + special_attack_evs + special_defense_evs + speed_evs) <= 510)
+	CONSTRAINT valid_evs CHECK ((hp_evs + attack_evs + defense_evs + special_attack_evs + special_defense_evs + speed_evs) <= 510),
+	unique(pokemon_id,ability_id,held_item_id,tera_type_id,attack_iv,special_attack_iv,speed_iv,nature_id,hp_evs,attack_evs,defense_evs,special_attack_evs,special_defense_evs,speed_evs,move_1_id,move_2_id,move_3_id,move_4_id)
 );
 
 CREATE TABLE teams (
@@ -114,7 +115,8 @@ CREATE TABLE teams (
 CREATE TABLE team_references (
 	id serial primary key,
 	team_id integer references teams on delete cascade not null,
-	reference varchar(255) not null
+	reference varchar(255) not null,
+	unique(team_id,reference)
 );
 
 
