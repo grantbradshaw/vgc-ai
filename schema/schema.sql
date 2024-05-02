@@ -91,10 +91,10 @@ CREATE TABLE competitive_pokemon (
 	special_attack_evs smallint CHECK (special_attack_evs >= 0 and special_attack_evs <= 252) not null,
 	special_defense_evs smallint CHECK (special_defense_evs >= 0 and special_defense_evs <= 252) not null,
 	speed_evs smallint CHECK (speed_evs >= 0 and speed_evs <= 252) not null,
-	move_1 varchar(255) not null,
-	move_2 varchar(255),
-	move_3 varchar(255),
-	move_4 varchar(255),
+	move_1_id integer references moves on delete cascade not null,
+	move_2_id integer references moves on delete cascade,
+	move_3_id integer references moves on delete cascade,
+	move_4_id integer references moves on delete cascade,
 
 	CONSTRAINT valid_evs CHECK ((hp_evs + attack_evs + defense_evs + special_attack_evs + special_defense_evs + speed_evs) <= 510)
 );
