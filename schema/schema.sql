@@ -41,7 +41,7 @@ CREATE TABLE pokemon (
 	name varchar(255) not null,
 	region_id integer references regions on delete cascade not null,
 	variant varchar(255),
-	national_dex_number smallint UNIQUE not null,
+	national_dex_number smallint not null,
 	type_1_id integer references types on delete cascade not null ,
 	type_2_id integer references types on delete cascade,
 	ability_1_id integer references abilities on delete cascade not null ,
