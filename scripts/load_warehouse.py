@@ -50,17 +50,18 @@ def load_warehouse():
 		-- note that if a competitive_pokemon is in multiple teams across regulations, then this table will have a row for each regulation
 		-- left join ensures theory pokemon not associated with a team are included
 		left join (
-			select id, regulation_id, competitive_pokemon_1_id as cp_id FROM teams
+			select regulation_id, competitive_pokemon_1_id as cp_id FROM teams
 			UNION
-			select id, regulation_id, competitive_pokemon_2_id as cp_id  FROM teams
+			select regulation_id, competitive_pokemon_2_id as cp_id  FROM teams
 			UNION
-			select id, regulation_id, competitive_pokemon_3_id as cp_id FROM teams
+			select regulation_id, competitive_pokemon_3_id as cp_id FROM teams
 			UNION
-			select id, regulation_id, competitive_pokemon_4_id as cp_id FROM teams
+			select regulation_id, competitive_pokemon_4_id as cp_id FROM teams
 			UNION
-			select id, regulation_id, competitive_pokemon_5_id as cp_id FROM teams
+			select regulation_id, competitive_pokemon_5_id as cp_id FROM teams
 			UNION
-			select id, regulation_id, competitive_pokemon_6_id as cp_id FROM teams
+			select regulation_id, competitive_pokemon_6_id as cp_id FROM teams
+			GROUP BY 1,2
 		) tr
 			on cp.id = tr.cp_id
 		join regulations rg
