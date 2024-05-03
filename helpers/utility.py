@@ -1,3 +1,4 @@
+import pandas as pd
 from sqlalchemy import text
 
 from helpers.establish_db_connection import get_db_engine
@@ -12,7 +13,7 @@ def get_fk_id(table, name, conn_arg=None, allow_none=False):
 	# allow_none is intended to allow failing to find a name
 	# however, if get_fk_id is passed a "null" value, this function simply bounces it back
 	# by extension, this function will not search null names
-	if name == "" or name == None:
+	if name == "" or name == None or pd.isnull(name):
 		return None
 
 	if conn_arg == None:

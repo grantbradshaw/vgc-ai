@@ -1,15 +1,15 @@
+DROP TABLE IF EXISTS team_references;
+DROP TABLE IF EXISTS teams;
+DROP TABLE IF EXISTS competitive_pokemon;
+DROP TABLE IF EXISTS pokemon;
 DROP TABLE IF EXISTS regions;
 DROP TABLE IF EXISTS types;
 DROP TABLE IF EXISTS natures;
 DROP TABLE IF EXISTS abilities;
 DROP TABLE IF EXISTS egg_groups;
-DROP TABLE IF EXISTS pokemon;
 DROP TABLE IF EXISTS held_items;
 DROP TABLE IF EXISTS moves;
 DROP TABLE IF EXISTS regulations;
-DROP TABLE IF EXISTS team_references;
-DROP TABLE IF EXISTS teams;
-DROP TABLE IF EXISTS competitive_pokemon;
 
 CREATE TABLE regions (
 	id serial primary key,
@@ -41,7 +41,7 @@ CREATE TABLE pokemon (
 	name varchar(255) not null,
 	region_id integer references regions on delete cascade not null,
 	variant varchar(255),
-	national_dex_number smallint UNIQUE not null,
+	national_dex_number smallint not null,
 	type_1_id integer references types on delete cascade not null ,
 	type_2_id integer references types on delete cascade,
 	ability_1_id integer references abilities on delete cascade not null ,
@@ -55,8 +55,7 @@ CREATE TABLE pokemon (
 	defense smallint not null,
 	special_attack smallint not null,
 	special_defense smallint not null,
-	speed smallint not null
-
+	speed smallint not null,
 	unique(name,variant,region_id)
 );
 
@@ -67,7 +66,7 @@ CREATE TABLE held_items (
 
 CREATE TABLE moves (
 	id serial primary key,
-	name varchar(255) UNIQUE not null,
+	name varchar(255) UNIQUE not null
 );
 
 CREATE TABLE regulations (
@@ -118,14 +117,3 @@ CREATE TABLE team_references (
 	reference varchar(255) not null,
 	unique(team_id,reference)
 );
-
-
-
-
-
-
-
-
-
-
-
