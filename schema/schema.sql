@@ -1,15 +1,15 @@
+DROP TABLE IF EXISTS team_references;
+DROP TABLE IF EXISTS teams;
+DROP TABLE IF EXISTS competitive_pokemon;
+DROP TABLE IF EXISTS pokemon;
 DROP TABLE IF EXISTS regions;
 DROP TABLE IF EXISTS types;
 DROP TABLE IF EXISTS natures;
 DROP TABLE IF EXISTS abilities;
 DROP TABLE IF EXISTS egg_groups;
-DROP TABLE IF EXISTS pokemon;
 DROP TABLE IF EXISTS held_items;
 DROP TABLE IF EXISTS moves;
 DROP TABLE IF EXISTS regulations;
-DROP TABLE IF EXISTS team_references;
-DROP TABLE IF EXISTS teams;
-DROP TABLE IF EXISTS competitive_pokemon;
 
 CREATE TABLE regions (
 	id serial primary key,
@@ -117,14 +117,3 @@ CREATE TABLE team_references (
 	reference varchar(255) not null,
 	unique(team_id,reference)
 );
-
-
-
-
-
-
-
-
-
-
-
