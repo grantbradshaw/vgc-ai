@@ -139,10 +139,3 @@ def insert_series(s, conn):
 
 
 load_warehouse()
-
-
-
-
-
-
-

@@ -144,7 +144,3 @@ def insert_series(s, conn):
 
 
 initialize_data()
-
-
-
-
