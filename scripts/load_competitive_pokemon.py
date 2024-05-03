@@ -260,7 +260,7 @@ def insert_competitive_pokemon(conn, pokemon_data):
 	if held_item_id is not None:
 		insert["held_item_id"] = held_item_id
 
-	for i in range(0, len(move_ids)):
+	for i in range(0, len(list(sorted(move_ids)))):
 		insert["move_{}_id".format(str(i+1))] = move_ids[i]
 
 	columns = []
