@@ -5,7 +5,7 @@ import pandas as pd
 from sqlalchemy import text
 
 from helpers.establish_db_connection import get_db_engine
-from helpers.utility import get_fk_id
+from helpers.utility import get_fk_id, insert_row
 
 # load_data is always destructive, as the data being loaded here should never be updated directly in the database. 
 def initialize_data():
@@ -73,9 +73,6 @@ def initialize_data():
 		conn.execute(text("ALTER SEQUENCE pokemon_id_seq RESTART WITH 1"))
 
 		pokemon_df = pd.read_csv("data/pokemon.csv")
-		pokemon_df["Ability 1"] = pokemon_df["Ability 1"]
-		pokemon_df["Ability 2"] = pokemon_df["Ability 2"]
-		pokemon_df["Hidden Ability"] = pokemon_df["Hidden Ability"]
 		# allow_none is only set to True if it is possible for this value to be null for a Pokemon
 		# put differently, it is assumed that data/pokemon.csv is formatted properly, and error handling will happen gracelessly in get_fk_id
 		pokemon_df["region_id"] = pokemon_df["Original Region"].apply(lambda x: get_fk_id("regions", x, conn_arg=conn))
@@ -133,14 +130,7 @@ def insert_series(s, conn):
 	if not pd.isnull(s["egg_group_2_id"]):
 		insert["egg_group_2_id"] = int(s["egg_group_2_id"])
 
-	columns = []
-	values = []
-
-	for key, value in insert.items():
-		columns.append(key)
-		values.append(str(value))
-
-	conn.execute(text("INSERT INTO pokemon ({}) VALUES ({})".format(",".join(columns), "'" + "','".join(values) + "'")))
+	insert_row(insert, "pokemon", conn)
 
 
 initialize_data()
