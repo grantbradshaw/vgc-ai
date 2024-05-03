@@ -55,8 +55,7 @@ CREATE TABLE pokemon (
 	defense smallint not null,
 	special_attack smallint not null,
 	special_defense smallint not null,
-	speed smallint not null
-
+	speed smallint not null,
 	unique(name,variant,region_id)
 );
 
@@ -67,7 +66,7 @@ CREATE TABLE held_items (
 
 CREATE TABLE moves (
 	id serial primary key,
-	name varchar(255) UNIQUE not null,
+	name varchar(255) UNIQUE not null
 );
 
 CREATE TABLE regulations (
