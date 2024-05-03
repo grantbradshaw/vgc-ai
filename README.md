@@ -39,9 +39,6 @@ All data is accurate as of generation 9. The files in `data/` are all sourced fr
 - Support better "ETL" patterns for data warehouse - for instance, currently a bit of an anti-pattern (wipes table and full loads), but if we actually tracked changes, we could use better patterns (DELETE removed / updated rows, then INSERT the updated rows / new rows)
 - Refactor scripts to use the `pd.read_sql` pattern used in `scripts/load_warehouse.py`
 
-## Bugs
-- While `SELECT count(*) from competitive_pokemon` should >= `SELECT count(*) from competitive_pokemon_lookup`, the difference is larger than would be expected from the same Pokemon spread appearing across regulations
-
 ## References
 - Bulbapedia, under this [License](https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Copyrights)
 
