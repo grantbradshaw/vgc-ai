@@ -79,7 +79,7 @@ def load_warehouse():
 		cpl_df = pd.read_sql(cpl_query, conn)
 		cpl_df.apply(lambda x: insert_series(x, conn), axis=1)
 
-	conn.commit()
+		conn.commit()
 		
 
 def insert_series(s, conn):
