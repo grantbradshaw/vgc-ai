@@ -19,7 +19,7 @@ Currently, the project simply runs on local. To spin up this project on your own
 - Once you have set up a local postgres database, change `.env-example` to `.env` with the proper database environment variables. The assumption is that you do not have a password set, but if you do, you can update `helpers/establish_db_connection.py` to take a password
 - Within your database, run the commands in `schema.sql`
 - Before starting to seed the database, rename `data/ladder_dump_public.csv` to `data/ladder_dump.csv` (the file I use on local has private teams that I won't upload to Github)
-- Finally, run `python3 -m scripts/load_raw_data.py` followed by `python3 -m scripts/load_competitive_pokemon.py`
+- Finally, run `python3 -m scripts.load_raw_data` followed by `python3 -m scripts.load_competitive_pokemon`
 
 ### Data Notes
 All data is accurate as of generation 9. The files in `data/` are all sourced from Bulbapedia, with the exception of data added afterwards while testing with actual teams. I used discretion in seeding some of the files, specifically `data/held_items.json` - I only included items I thought had any use in competitive.

@@ -73,9 +73,9 @@ def initialize_data():
 		conn.execute(text("ALTER SEQUENCE pokemon_id_seq RESTART WITH 1"))
 
 		pokemon_df = pd.read_csv("data/pokemon.csv")
-		pokemon_df["Ability 1"] = pokemon_df["Ability 1"].str.replace("'", "''")
-		pokemon_df["Ability 2"] = pokemon_df["Ability 2"].str.replace("'", "''")
-		pokemon_df["Hidden Ability"] = pokemon_df["Hidden Ability"].str.replace("'", "''")
+		pokemon_df["Ability 1"] = pokemon_df["Ability 1"]
+		pokemon_df["Ability 2"] = pokemon_df["Ability 2"]
+		pokemon_df["Hidden Ability"] = pokemon_df["Hidden Ability"]
 		# allow_none is only set to True if it is possible for this value to be null for a Pokemon
 		# put differently, it is assumed that data/pokemon.csv is formatted properly, and error handling will happen gracelessly in get_fk_id
 		pokemon_df["region_id"] = pokemon_df["Original Region"].apply(lambda x: get_fk_id("regions", x, conn_arg=conn))
