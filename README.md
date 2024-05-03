@@ -33,9 +33,14 @@ All data is accurate as of generation 9. The files in `data/` are all sourced fr
 - Support Open Team Sheet pastes.
 - Record Pokemon genders.
 - Currently validation that data loading scripts are working properly is being done manually with direct SQL queries - would be better to add automated data validation checks.
-- Proper testing of various functions beyond the manual testing done by myself.
-- Better validation of resources allowed to be inserted in to the database.
+- Proper testing of various functions beyond the manual testing done by myself. 
+- Better validation of data inserted in to the database. For instance, don't insert a competitive pokemon with an ability the Pokemon can't have, don't insert ill formatted resources
 - Add support for regulation G (code has not been rigorously tested against regulation G pastes - i.e. Calyrex is known to error with the Ability scraped from Pastes).
+- Support better "ETL" patterns for data warehouse - for instance, currently a bit of an anti-pattern (wipes table and full loads), but if we actually tracked changes, we could use better patterns (DELETE removed / updated rows, then INSERT the updated rows / new rows)
+- Refactor scripts to use the `pd.read_sql` pattern used in `scripts/load_warehouse.py`
+
+## Bugs
+- While `SELECT count(*) from competitive_pokemon` should >= `SELECT count(*) from competitive_pokemon_lookup`, the difference is larger than would be expected from the same Pokemon spread appearing across regulations
 
 ## References
 - Bulbapedia, under this [License](https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Copyrights)
