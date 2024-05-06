@@ -49,7 +49,11 @@ def load_competitive_pokemon(force_reload=False):
 						raise Exception("URL {} is not a valid PokePaste url.".format(paste_url))
 
 					# now, we check if we have already scraped this exact URL
-					paste_result = conn.execute(text("SELECT id from teams where paste_url = '{}'".format(paste_url)))
+					paste_result_df = pd.read_sql("SELECT id from teams where paste_url = '{}'".format(paste_url), conn)
+
+					conn.execute(text("SELECT id from teams where paste_url = '{}'".format(paste_url)))
+
+
 
 					cached = False
 					for paste_row in paste_result:
@@ -290,4 +294,4 @@ def insert_competitive_pokemon(conn, pokemon_data):
 		raise Exception("New competitive_pokemon row was not inserted properly.")
 
 
-load_competitive_pokemon()
+load_competitive_pokemon(force_reload=True)
