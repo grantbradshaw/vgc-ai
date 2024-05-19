@@ -4,6 +4,7 @@ import pandas as pd
 import pprint
 import re
 from sqlalchemy import text
+import sys
 import warnings
 
 from helpers.establish_db_connection import get_db_engine
@@ -13,9 +14,15 @@ from helpers.read_pokepaste import extract_paste
 pp = pprint.PrettyPrinter(indent=2)
 
 # by default, this function will not wipe the relevant tables
-# this allows appending to  "data/ladder_dump.csv" to add to the tables
+# this allows appending to "data/ladder_dump.csv" to add to the tables
+# however, the function can wipe the tables if it is passed command line argument --force-reload
 # note that even if loading the file does not complete, the tables will still be wiped (because of the caching pattern)
-def load_competitive_pokemon(force_reload=False):
+def load_competitive_pokemon():
+	if "--force-reload" in sys.argv:
+		force_reload = True
+	else:
+		force_reload = False
+
 	engine = get_db_engine()
 	with engine.connect() as conn:
 		if force_reload:
@@ -51,19 +58,11 @@ def load_competitive_pokemon(force_reload=False):
 					# now, we check if we have already scraped this exact URL
 					paste_result_df = pd.read_sql("SELECT id from teams where paste_url = '{}'".format(paste_url), conn)
 
-					conn.execute(text("SELECT id from teams where paste_url = '{}'".format(paste_url)))
-
-
-
-					cached = False
-					for paste_row in paste_result:
-						if cached == False:
-							cached = True
-						else:
-							warnings.warn("Table teams has duplicate paste_url {}".format(paste_url))
-
-					# there is no reason to scrape a paste we have already scraped
-					if cached:
+					if len(paste_result_df.index) > 1:
+						warnings.warn("Table teams has duplicate paste_url {}".format(paste_url))
+						continue
+					elif len(paste_result_df.index) == 1:
+						# there is no reason to scrape a paste we have already scraped
 						continue
 
 					regulation_id = get_fk_id("regulations", regulation, conn_arg=conn)
@@ -166,11 +165,6 @@ def load_competitive_pokemon(force_reload=False):
 						
 
 					conn.commit()
-
-					
-
-
-		conn.commit()
 
 # this function inserts a row for a competitive pokemon if that unique set is not already present in the database
 # then returns the id representing this unique competitive pokemon
@@ -278,7 +272,6 @@ def insert_competitive_pokemon(conn, pokemon_data):
 
 	# now, we can run the same query from above which failed to find this unique pokemon
 	# it should return the id of our inserted row
-
 	existing_result = conn.execute(text(existing_competitive_pokemon_query_string))
 	existing_id = None
 
@@ -294,4 +287,4 @@ def insert_competitive_pokemon(conn, pokemon_data):
 		raise Exception("New competitive_pokemon row was not inserted properly.")
 
 
-load_competitive_pokemon(force_reload=True)
+load_competitive_pokemon()
