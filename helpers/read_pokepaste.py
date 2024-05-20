@@ -5,7 +5,7 @@ def get_pokemon_name_item_variant_region(s):
 	if "@" in s:
 		name_chunk, item_chunk = s.split("@")
 	else:
-		name_chunk = s
+		name_chunk, item_chunk = s, None
 
 	# We currently don't care what gender a Pokemon is, so we strip this data for simplicity
 	# PokePaste behaves strangely with forced gender Pokemon
@@ -31,7 +31,10 @@ def get_pokemon_name_item_variant_region(s):
 	else:
 		name = name_chunk.strip()
 
-	item = item_chunk.strip()
+	if item_chunk:
+		item = item_chunk.strip()
+	else:
+		item = None
 
 	variant = None
 	region = None
@@ -111,7 +114,6 @@ def get_pokemon_name_item_variant_region(s):
 
 def get_pokemon_ability_tera_type(s):
 	return s.split(":")[1].strip()
-
 
 def get_pokemon_stat_investment(s, stat_type):
 	# it is assumed that trainers will not want to minimize HP, Defense, or Special Defense in any case
@@ -216,16 +218,27 @@ def extract_paste(url):
 			# pastes can use two different dash characters to lead moves
 			moves = clean_pokemon_moves(list(filter(lambda x: x[0:2] == "- " or x[0:2] == "– ", pokemon)))
 
-			team.append({
-					"pokemon": name,
-					"item": item,
-					"ability": ability,
-					"variant": variant,
-					"region": region,
-					"tera_type": tera_type,
-					"evs": evs,
-					"nature": nature,
-					"ivs": ivs,
-					"moves": moves 
-				   })
+			pokemon_data = {
+				"pokemon": name,
+				"ability": ability,
+				"tera_type": tera_type,
+				"evs": evs,
+				"ivs": ivs,
+				"moves": moves
+			}
+
+			if item:
+				pokemon_data["held_item"] = item
+
+			if variant:
+				pokemon_data["variant"] = variant
+
+			if region:
+				pokemon_data["region"] = region
+
+			if nature:
+				pokemon_data["nature"] = nature
+
+			team.append(pokemon_data)
+
 	return team

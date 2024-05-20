@@ -8,7 +8,7 @@ import sys
 import warnings
 
 from helpers.establish_db_connection import get_db_engine
-from helpers.utility import get_fk_id, get_pokemon_id, insert_row
+from helpers.utility import get_fk_id, get_pokemon_id, insert_row, insert_competitive_pokemon
 from helpers.read_pokepaste import extract_paste
 
 pp = pprint.PrettyPrinter(indent=2)
@@ -156,107 +156,5 @@ def load_competitive_pokemon():
 							insert_row(reference_insert, "team_references", conn)
 
 					conn.commit()
-
-# this function inserts a row for a competitive pokemon if that unique set is not already present in the database
-# then returns the id representing this unique competitive pokemon
-def insert_competitive_pokemon(conn, pokemon_data):
-	ability_id = get_fk_id("abilities", pokemon_data["ability"], conn_arg=conn)
-	held_item_id = get_fk_id("held_items", pokemon_data["item"], conn_arg=conn)
-	tera_type_id = get_fk_id("types", pokemon_data["tera_type"], conn_arg=conn)
-	nature_id = get_fk_id("natures", pokemon_data["nature"], conn_arg=conn)
-	# Pokepastes only lists region for variants, so None is possible
-	region_id = get_fk_id("regions", pokemon_data["region"], conn_arg=conn, allow_none=True)
-	pokemon_id = get_pokemon_id(pokemon_data["pokemon"], region_id, pokemon_data["variant"])
-
-	move_ids = []
-	for move in pokemon_data["moves"]:
-		# by this point, empty move slots are expected to have been filtered out, so we don't allow_none
-		move_id = get_fk_id("moves", move, conn_arg=conn)
-		move_ids.append(move_id)
-
-	# now, we check whether this competitive_pokemon exists
-	existing_competitive_pokemon_query_string = """
-	select
-	id
-	from competitive_pokemon
-	where
-	pokemon_id = '{}'
-	  and ability_id = '{}'
-	  and tera_type_id = '{}'
-	  and attack_iv = '{}'
-	  and special_attack_iv = '{}'
-	  and speed_iv = '{}'
-	  and nature_id = '{}'
-	  and hp_evs = '{}'
-	  and attack_evs = '{}'
-	  and defense_evs = '{}'
-	  and special_attack_evs = '{}'
-	  and special_defense_evs = '{}'
-	  and speed_evs = '{}'
-	""".format(pokemon_id, 
-			   ability_id,  
-			   tera_type_id, 
-			   pokemon_data["ivs"]["attack_iv"],
-			   pokemon_data["ivs"]["special_attack_iv"],
-			   pokemon_data["ivs"]["speed_iv"],
-			   nature_id,
-			   pokemon_data["evs"]["hp_evs"],
-			   pokemon_data["evs"]["attack_evs"],
-			   pokemon_data["evs"]["defense_evs"],
-			   pokemon_data["evs"]["special_attack_evs"],
-			   pokemon_data["evs"]["special_defense_evs"],
-			   pokemon_data["evs"]["speed_evs"]
-			   )
-
-	if held_item_id is not None:
-		existing_competitive_pokemon_query_string += " and held_item_id = '{}'".format(held_item_id)
-
-	for i in range(0, len(move_ids)):
-		existing_competitive_pokemon_query_string += " and move_{}_id = '{}'".format((str(i + 1)), str(move_ids[i]))
-
-	existing_result_df = pd.read_sql(existing_competitive_pokemon_query_string, conn)
-
-	if len(existing_result_df.index) > 1:
-		warnings.warn("This Pokemon is duplicated in competitive_pokemon")
-		pp.pprint(pokemon_data)
-		return existing_result_df.at[0, "id"]
-	elif len(existing_result_df.index) == 1:
-		return existing_result_df.at[0, "id"]
-
-	# if this chunk of code is running, then a competitive pokemon with these exact attributes was not found in the database
-	# therefore, we need to insert a row
-	insert = {
-	  "pokemon_id": pokemon_id,
-	  "ability_id": ability_id,
-	  "tera_type_id": tera_type_id,
-	  "attack_iv": pokemon_data["ivs"]["attack_iv"],
-	  "special_attack_iv": pokemon_data["ivs"]["special_attack_iv"],
-	  "speed_iv": pokemon_data["ivs"]["speed_iv"],
-	  "nature_id": nature_id,
-	  "hp_evs": pokemon_data["evs"]["hp_evs"],
-	  "attack_evs": pokemon_data["evs"]["attack_evs"],
-	  "defense_evs": pokemon_data["evs"]["defense_evs"],
-	  "special_attack_evs": pokemon_data["evs"]["special_attack_evs"],
-	  "special_defense_evs": pokemon_data["evs"]["special_defense_evs"],
-	  "speed_evs": pokemon_data["evs"]["speed_evs"]
-	}
-
-	if held_item_id is not None:
-		insert["held_item_id"] = held_item_id
-
-	for i in range(0, len(list(sorted(move_ids)))):
-		insert["move_{}_id".format(str(i+1))] = move_ids[i]
-
-	insert_row(insert, "competitive_pokemon", conn)
-
-	# now, we can run the same query from above which failed to find this unique pokemon
-	# it should return the id of our inserted row
-	existing_result_df = pd.read_sql(existing_competitive_pokemon_query_string, conn)
-	if len(existing_result_df.index) > 1:
-		raise Exception("New competitive_pokemon row was inserted multiple times.")
-	elif len(existing_result_df.index) == 1:
-		return existing_result_df.at[0, "id"]
-	else:
-		raise Exception("New competitive_pokemon row was not inserted properly.")
 
 load_competitive_pokemon()

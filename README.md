@@ -41,6 +41,7 @@ All data is accurate as of generation 9. The files in `data/` are all sourced fr
 - Add support for regulation G (code has not been rigorously tested against regulation G pastes - i.e. Calyrex is known to error with the ability scraped from PokePastes).
 - Support better "ETL" patterns for data warehouse - for instance, currently a bit of an anti-pattern (wipes table and full loads), but if we actually tracked changes, we could use better patterns (DELETE removed / updated rows, then INSERT the updated rows / new rows).
 - Refactor scripts to use the `pd.read_sql` pattern used in `scripts/load_warehouse.py`.
+- Look into migrating to MongoDB
 
 ## References
 - Bulbapedia, under this [License](https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Copyrights)
