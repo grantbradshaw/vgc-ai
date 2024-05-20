@@ -4,6 +4,7 @@ import pandas as pd
 from sqlalchemy import text
 
 from helpers.establish_db_connection import get_db_engine
+from helpers.utility import insert_row
 
 def load_warehouse():
 	engine = get_db_engine()
@@ -127,15 +128,6 @@ def insert_series(s, conn):
 
 	insert["moves"] = json.dumps(moves)
 
-	columns = []
-	values = []
-
-	for key,value in insert.items():
-		columns.append(key)
-		values.append(str(value))
-
-
-	conn.execute(text("INSERT INTO competitive_pokemon_lookup ({}) VALUES ({})".format(",".join(columns), "'" + "','".join(values) + "'")))
-
+	insert_row(insert, "competitive_pokemon_lookup", conn)
 
 load_warehouse()
