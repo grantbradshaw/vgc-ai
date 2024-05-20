@@ -5,7 +5,7 @@ import pandas as pd
 from sqlalchemy import text
 
 from helpers.establish_db_connection import get_db_engine
-from helpers.utility import get_fk_id
+from helpers.utility import get_fk_id, insert_row
 
 # load_data is always destructive, as the data being loaded here should never be updated directly in the database. 
 def initialize_data():
@@ -130,14 +130,7 @@ def insert_series(s, conn):
 	if not pd.isnull(s["egg_group_2_id"]):
 		insert["egg_group_2_id"] = int(s["egg_group_2_id"])
 
-	columns = []
-	values = []
-
-	for key, value in insert.items():
-		columns.append(key)
-		values.append(str(value))
-
-	conn.execute(text("INSERT INTO pokemon ({}) VALUES ({})".format(",".join(columns), "'" + "','".join(values) + "'")))
+	insert_row(insert, "pokemon", conn)
 
 
 initialize_data()

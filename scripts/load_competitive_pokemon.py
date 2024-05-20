@@ -4,18 +4,25 @@ import pandas as pd
 import pprint
 import re
 from sqlalchemy import text
+import sys
 import warnings
 
 from helpers.establish_db_connection import get_db_engine
-from helpers.utility import get_fk_id, get_pokemon_id
+from helpers.utility import get_fk_id, get_pokemon_id, insert_row
 from helpers.read_pokepaste import extract_paste
 
 pp = pprint.PrettyPrinter(indent=2)
 
 # by default, this function will not wipe the relevant tables
-# this allows appending to  "data/ladder_dump.csv" to add to the tables
+# this allows appending to "data/ladder_dump.csv" to add to the tables
+# however, the function can wipe the tables if it is passed command line argument --force-reload
 # note that even if loading the file does not complete, the tables will still be wiped (because of the caching pattern)
-def load_competitive_pokemon(force_reload=False):
+def load_competitive_pokemon():
+	if "--force-reload" in sys.argv:
+		force_reload = True
+	else:
+		force_reload = False
+
 	engine = get_db_engine()
 	with engine.connect() as conn:
 		if force_reload:
@@ -49,17 +56,13 @@ def load_competitive_pokemon(force_reload=False):
 						raise Exception("URL {} is not a valid PokePaste url.".format(paste_url))
 
 					# now, we check if we have already scraped this exact URL
-					paste_result = conn.execute(text("SELECT id from teams where paste_url = '{}'".format(paste_url)))
+					paste_result_df = pd.read_sql("SELECT id from teams where paste_url = '{}'".format(paste_url), conn)
 
-					cached = False
-					for paste_row in paste_result:
-						if cached == False:
-							cached = True
-						else:
-							warnings.warn("Table teams has duplicate paste_url {}".format(paste_url))
-
-					# there is no reason to scrape a paste we have already scraped
-					if cached:
+					if len(paste_result_df.index) > 1:
+						warnings.warn("Table teams has duplicate paste_url {}".format(paste_url))
+						continue
+					elif len(paste_result_df.index) == 1:
+						# there is no reason to scrape a paste we have already scraped
 						continue
 
 					regulation_id = get_fk_id("regulations", regulation, conn_arg=conn)
@@ -72,8 +75,13 @@ def load_competitive_pokemon(force_reload=False):
 					for pokemon_data in team:
 						competitive_pokemon_ids.append(str(insert_competitive_pokemon(conn, pokemon_data)))
 
+					competitive_pokemon_ids.sort()
+
 					# next, we check whether this exact team already exists in the database
-					# this primarily catches duplicated pastes, but also covers a case where two trainers used identical teams
+					# this primarily catches duplicated pastes (i.e. different url but same data)
+					# but also covers a case where two trainers used identical teams
+					# we leverage the ordering of competitive_pokemon_ids in inserting the team to simplify the following query
+					# otherwise we would need to explicitly rank the 6 ids to cover for the same team in a different order
 					team_query = """
 					select
 					id
@@ -94,21 +102,17 @@ def load_competitive_pokemon(force_reload=False):
 							   competitive_pokemon_ids[5]
 							  )
 
-					duplicate_team_result = conn.execute(text(team_query))
-
-					duplicate_team = False
+					duplicate_team_result_df = pd.read_sql(team_query, conn)
 					team_id = None
 
-					for duplicate_team_row in duplicate_team_result:
-						if duplicate_team == False:
-							duplicate_team = True
-							team_id = duplicate_team_row[0]
-						else:
-							warnings.warn("Table teams already has a duplicated row. See the following query")
-							pp.pprint(duplicate_team_query)
+					if len(duplicate_team_result_df.index) > 1:
+						warnings.warn("Table teams already has a duplicated row. See the following query")
+						pp.pprint(duplicate_team_query)
+						team_id = duplicate_team_result_df.at[0, "id"]
+					elif len(duplicate_team_result_df.index) == 1:
+						team_id = duplicate_team_result_df.at[0, "id"]
 
-					if not duplicate_team:
-
+					if team_id is None:
 						insert = {
 							"regulation_id": regulation_id,
 							"competitive_pokemon_1_id": competitive_pokemon_ids[0],
@@ -120,53 +124,38 @@ def load_competitive_pokemon(force_reload=False):
 							"paste_url": paste_url
 						}
 
-						columns = []
-						values = []
-
-						for key, value in insert.items():
-							columns.append(key)
-							values.append(str(value))
-
-						conn.execute(text("INSERT INTO teams ({}) VALUES ({})".format(",".join(columns), "'" + "','".join(values) + "'")))
-
+						insert_row(insert, "teams", conn)
+						
 						# we must then get back the id of the team inserted
 						inserted_team_query = team_query + " and paste_url = '{}'".format(paste_url)
-						inserted_team_result = conn.execute(text(inserted_team_query))
+						inserted_team_result_df = pd.read_sql(inserted_team_query, conn)
 
-						for inserted_team_row in inserted_team_result:
-							# which is is, because we're in this if block
-							if team_id is None:
-								team_id = inserted_team_row[0]
-							elif team_id is not None:
-								raise Exception("New teams row has been duplicated.")
-
-						if team_id is None:
-							raise Exception("An error has occurred in inserting the new team row.") 
+						if len(inserted_team_result_df.index) == 0:
+							raise Exception("An error occurred inserting the new team row for paste {}".format(paste_url))
+						elif len(inserted_team_result_df.index) > 1:
+							raise Exception("New team row was duplicated for paste {}".format(paste_url))
+						else:
+							team_id = inserted_team_result_df.at[0, "id"]
 
 					# finally, we insert the links to references that can help us learn more about the team
 					# these include team reports, tournament games, content creator videos featuring the team, etc.
 					references = list(filter(lambda x: len(x) >= 1, row[3:]))
 
 					for reference in references:
-						duplicate_reference_result = conn.execute(text("SELECT id from team_references where team_id = '{}' and reference = '{}'".format(str(team_id), reference)))
-						is_duplicate_reference = False
+						# pyscopg2 SELECT complains about single % signs in url, so we have to escape them
+						duplicate_reference_result_df = pd.read_sql("SELECT id from team_references where team_id = '{}' and reference = '{}'".format(str(team_id), reference.replace("%", "%%")), conn)
 
-						# we don't need to handle if is_duplicate = True, as there is a schema level uniqueness constraint
-						# this validation is simply to avoid gracelessly error handling at a DB level
-						for duplicate_reference_row in duplicate_reference_result:
-							if is_duplicate_reference == False:
-								is_duplicate_reference = True
-
-						if not is_duplicate_reference:
-							conn.execute(text("INSERT INTO team_references (team_id, reference) VALUES ({})".format("'" + str(team_id) + "','" + reference + "'")))
-						
+						# we don't need to cover a case where the paste has been duplicated
+						# as there are DB uniqueness constraints
+						# this simply avoids gracelessly error handling at a DB level
+						if len(duplicate_reference_result_df.index) >= 1:
+							continue
+						else:
+							reference_insert = {"team_id": team_id,
+												"reference": reference}
+							insert_row(reference_insert, "team_references", conn)
 
 					conn.commit()
-
-					
-
-
-		conn.commit()
 
 # this function inserts a row for a competitive pokemon if that unique set is not already present in the database
 # then returns the id representing this unique competitive pokemon
@@ -177,7 +166,6 @@ def insert_competitive_pokemon(conn, pokemon_data):
 	nature_id = get_fk_id("natures", pokemon_data["nature"], conn_arg=conn)
 	# Pokepastes only lists region for variants, so None is possible
 	region_id = get_fk_id("regions", pokemon_data["region"], conn_arg=conn, allow_none=True)
-
 	pokemon_id = get_pokemon_id(pokemon_data["pokemon"], region_id, pokemon_data["variant"])
 
 	move_ids = []
@@ -226,18 +214,14 @@ def insert_competitive_pokemon(conn, pokemon_data):
 	for i in range(0, len(move_ids)):
 		existing_competitive_pokemon_query_string += " and move_{}_id = '{}'".format((str(i + 1)), str(move_ids[i]))
 
-	existing_result = conn.execute(text(existing_competitive_pokemon_query_string))
-	existing_id = None
+	existing_result_df = pd.read_sql(existing_competitive_pokemon_query_string, conn)
 
-	for row in existing_result:
-		if existing_id is None:
-			existing_id = row[0]
-		elif existing_id is not None:
-			warnings.warn("This Pokemon is duplicated in competitive_pokemon")
-			pp.pprint(pokemon_data)
-
-	if existing_id is not None:
-		return existing_id
+	if len(existing_result_df.index) > 1:
+		warnings.warn("This Pokemon is duplicated in competitive_pokemon")
+		pp.pprint(pokemon_data)
+		return existing_result_df.at[0, "id"]
+	elif len(existing_result_df.index) == 1:
+		return existing_result_df.at[0, "id"]
 
 	# if this chunk of code is running, then a competitive pokemon with these exact attributes was not found in the database
 	# therefore, we need to insert a row
@@ -263,31 +247,16 @@ def insert_competitive_pokemon(conn, pokemon_data):
 	for i in range(0, len(list(sorted(move_ids)))):
 		insert["move_{}_id".format(str(i+1))] = move_ids[i]
 
-	columns = []
-	values = []
-
-	for key, value in insert.items():
-		columns.append(key)
-		values.append(str(value))
-
-	conn.execute(text("INSERT INTO competitive_pokemon ({}) VALUES ({})".format(",".join(columns), "'" + "','".join(values) + "'")))
+	insert_row(insert, "competitive_pokemon", conn)
 
 	# now, we can run the same query from above which failed to find this unique pokemon
 	# it should return the id of our inserted row
-
-	existing_result = conn.execute(text(existing_competitive_pokemon_query_string))
-	existing_id = None
-
-	for row in existing_result:
-		if existing_id is None:
-			existing_id = row[0]
-		elif existing_id is not None:
-			raise Exception("New competitive_pokemon row was inserted multiple times.")
-
-	if existing_id is not None:
-		return existing_id
+	existing_result_df = pd.read_sql(existing_competitive_pokemon_query_string, conn)
+	if len(existing_result_df.index) > 1:
+		raise Exception("New competitive_pokemon row was inserted multiple times.")
+	elif len(existing_result_df.index) == 1:
+		return existing_result_df.at[0, "id"]
 	else:
 		raise Exception("New competitive_pokemon row was not inserted properly.")
-
 
 load_competitive_pokemon()

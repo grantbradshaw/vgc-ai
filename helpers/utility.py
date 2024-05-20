@@ -38,6 +38,23 @@ def get_fk_id(table, name, conn_arg=None, allow_none=False):
 
 	return fk_id
 
+# expects a dictionary of format {"column": "value",...}
+# this must be passed a connection - this helper is intended to be run as part of a transaction and does not commit
+def insert_row(insert, table, conn):
+	if not isinstance(insert, dict):
+		raise Exception("insert_row expects a dictionary, but received arg of type {}".format(str(type(insert))))
+
+	columns = []
+	values = []
+
+	for key, value in insert.items():
+		columns.append(key)
+		values.append(str(value))
+
+	conn.execute(text("INSERT INTO {} ({}) VALUES ({})".format(table, ",".join(columns), "'" + "','".join(values) + "'")))
+
+	return True
+
 
 def get_pokemon_id(name, region_id, variant, conn_arg=None):
 	if conn_arg == None:
