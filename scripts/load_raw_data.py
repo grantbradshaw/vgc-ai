@@ -62,6 +62,30 @@ def initialize_data():
 			for row in moves_reader:
 				conn.execute(text("INSERT INTO moves (name) VALUES ('{}')".format(row[0].replace("'", "''"))))
 
+		conn.execute(text("DELETE FROM detailed_moves"))
+		conn.execute(text("ALTER SEQUENCE detailed_moves_id_seq RESTART WITH 1"))
+		with open("data/detailed_moves.csv") as detailed_moves_infile:
+			detailed_moves_reader = csv.reader(detailed_moves_infile)
+			detailed_moves_row_count = 0
+			for row in detailed_moves_reader:
+				detailed_moves_row_count += 1
+				if detailed_moves_row_count > 1:
+					if detailed_moves_row_count <= 3:
+						detailed_moves_insert = {"name": row[0],
+												 "type": get_fk_id("types", row[1], conn_arg=conn),
+												 "category": row[2],
+												 "targets": row[3],
+												 "pp": row[4],
+												 "hits": row[5],
+												 "power": row[6],
+												 "accuracy": row[7],
+												 "priority": row[8],
+												 "contact": row[9],
+												 "special_categories": json.dumps(row[10].split(",")),
+												 "bulbapedia_link": row[11]
+											    }
+						insert_row(detailed_moves_insert, "detailed_moves", conn)
+
 		conn.execute(text("DELETE FROM regulations"))
 		conn.execute(text("ALTER SEQUENCE regulations_id_seq RESTART WITH 1"))
 		with open("data/regulations.json") as regulations_infile:
