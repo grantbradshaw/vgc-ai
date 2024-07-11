@@ -66,11 +66,13 @@ def initialize_data():
 		conn.execute(text("ALTER SEQUENCE detailed_moves_id_seq RESTART WITH 1"))
 		with open("data/detailed_moves.csv") as detailed_moves_infile:
 			detailed_moves_reader = csv.reader(detailed_moves_infile)
+			move_effects = json.load(open("data/move_effects.json"))
+
 			detailed_moves_row_count = 0
 			for row in detailed_moves_reader:
 				detailed_moves_row_count += 1
 				if detailed_moves_row_count > 1:
-					if detailed_moves_row_count <= 30:
+					if detailed_moves_row_count <= 10:
 						detailed_moves_insert = {"name": row[0],
 												 "type": get_fk_id("types", row[1], conn_arg=conn),
 												 "category": row[2],
@@ -84,6 +86,8 @@ def initialize_data():
 												 "special_categories": json.dumps(row[10].split(",")),
 												 "bulbapedia_link": row[11]
 											    }
+						if row[0] in move_effects:
+							detailed_moves_insert["additional_effects"] = json.dumps(move_effects[row[0]])
 						insert_row(detailed_moves_insert, "detailed_moves", conn)
 
 		conn.execute(text("DELETE FROM regulations"))

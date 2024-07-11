@@ -1,0 +1,8 @@
+{
+	"Fire Punch": {"status_effect": {"status": "Burn",
+									 "probability": 0.1}},
+	"Thunder Punch": {"status_effect": {"status": "Paralysis",
+									 	"probability": 0.1}},
+	"Ice Punch": {"status_effect": {"status": "Freeze",
+									"probability": 0.1}}
+}
