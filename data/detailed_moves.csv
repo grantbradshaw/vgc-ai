@@ -1,0 +1,752 @@
+Move,Type,Category,Targets,PP,Hits,Power,Accuracy,Priority,Contact,Special Category,Bulbapedia Link,Additional Effects
+Pound,Normal,Physical,Single,35,1,40,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Pound_(move),
+Mega Punch,Normal,Physical,Single,20,1,80,85,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Mega_Punch_(move),
+Pay Day,Normal,Physical,Single,20,1,40,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Pay_Day_(move),
+Fire Punch,Fire,Physical,Single,15,1,75,100,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Fire_Punch_(move),Burn - 10%.
+Ice Punch,Ice,Physical,Single,15,1,75,100,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Ice_Punch_(move),Freeze - 10%.
+Thunder Punch,Electric,Physical,Single,15,1,75,100,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Thunder_Punch_(move),Paralyze - 10%.
+Scratch,Normal,Physical,Single,35,1,40,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Scratch_(move),
+Vise Grip,Normal,Physical,Single,30,1,55,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Vise_Grip_(move),
+Guillotine,Normal,Physical,Single,5,,,30,0,TRUE,OHKO,https://bulbapedia.bulbagarden.net/wiki/Guillotine_(move),Fixed Accuracy
+Swords Dance,Normal,Status,Self,20,,,,0,FALSE,Dance,https://bulbapedia.bulbagarden.net/wiki/Swords_Dance_(move),"Stat Change - Attack, 2."
+Cut,Normal,Physical,Single,30,1,50,95,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Cut_(move),
+Gust,Flying,Special,Single,35,1,40,100,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Gust_(move),Hits Flying.
+Wing Attack,Flying,Physical,Single,35,1,60,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Wing_Attack_(move),
+Whirlwind,Normal,Status,Single,20,,,,-6,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Whirlwind_(move),Bypasses Protection. Forces Switch.
+Fly,Flying,Physical,Single,15,1,90,95,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Fly_(move),Two Turn: Flying.
+Bind,Normal,Physical,Single,20,1,15,85,0,TRUE,Binding,https://bulbapedia.bulbagarden.net/wiki/Bind_(move),Binds the target for 4 or 5 turns.
+Slam,Normal,Physical,Single,20,1,80,75,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Slam_(move),
+Vine Whip,Grass,Physical,Single,25,1,45,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Vine_Whip_(move),
+Stomp,Normal,Physical,Single,20,1,65,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Stomp_(move),"30% chance to flinch. Against Pokemon that have used Minimize, always hits and damage dealt is doubled."
+Double Kick,Fighting,Physical,Single,30,2,30,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Double_Kick_(move),
+Mega Kick,Normal,Physical,Single,5,1,120,75,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Mega_Kick_(move),
+Sand Attack,Ground,Status,Single,15,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Sand_Attack_(move),Lowers target's accuracy by 1 stage.
+Headbutt,Normal,Physical,Single,15,1,70,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Headbutt_(move),30% chance to flinch.
+Horn Attack,Normal,Physical,Single,25,1,65,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Horn_Attack_(move),
+Fury Attack,Normal,Physical,Single,20,*,15,85,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Fury_Attack_(move),Hits target 2-5 times.
+Horn Drill,Normal,Physical,Single,5,,,30,0,TRUE,OHKO,https://bulbapedia.bulbagarden.net/wiki/Horn_Drill_(move),Ignores anything that would modify accuracy.
+Tackle,Normal,Physical,Single,35,1,40,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Tackle_(move),
+Body Slam,Normal,Physical,Single,15,1,85,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Body_Slam_(move),"30% chance to paralyze target. Against targets that have used Minimize, always hits and deals double damage."
+Wrap,Normal,Physical,Single,20,1,15,90,0,TRUE,Binding,https://bulbapedia.bulbagarden.net/wiki/Wrap_(move),Binds the target for 4 or 5 turns.
+Take Down,Normal,Physical,Single,20,1,90,85,0,TRUE,Recoil,https://bulbapedia.bulbagarden.net/wiki/Take_Down_(move),Recoil - 1/4 damage dealt.
+Thrash,Normal,Physical,Self,10,1,120,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Thrash_(move),* (similar to Outrage)
+Double-Edge,Normal,Physical,Single,15,1,120,100,0,TRUE,Recoil,https://bulbapedia.bulbagarden.net/wiki/Double-Edge_(move),Recoil - 1/3 damage dealt.
+Tail Whip,Normal,Status,Opponents,30,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Tail_Whip_(move),Stat Change - Defense -1.
+Poison Sting,Poison,Physical,Single,35,1,15,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Poison_Sting_(move),Poison - 30%.
+Twineedle,Bug,Physical,Single,20,2,25,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Twineedle_(move),Poison - 20% (each hit independently).
+Pin Missile,Bug,Physical,Single,20,*,25,95,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Pin_Missile_(move),Hits target 2-5 times.
+Leer,Normal,Status,Opponents,30,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Leer_(move),Lowers Defense of opponents by one.
+Bite,Dark,Physical,Single,25,1,60,100,0,TRUE,Biting,https://bulbapedia.bulbagarden.net/wiki/Bite_(move),Flinch - 30%.
+Growl,Normal,Status,Opponents,40,,,100,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Growl_(move),Stat Change - Attack -1.
+Roar,Normal,Status,Single,20,,,,-6,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Roar_(move),Forces switch.
+Sing,Normal,Status,Single,15,,,55,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Sing_(move),Sleep - 100%.
+Supersonic,Normal,Status,Single,20,,,55,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Supersonic_(move),Confusion - 100%.
+Sonic Boom,Normal,Special,Single,20,1,,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Sonic_Boom_(move),Fixed damage - 20 HP.
+Disable,Normal,Status,Single,20,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Disable_(move),Applies disabled status to last used move of target for 4 turns.
+Acid,Poison,Special,Single,30,1,40,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Acid_(move),"Stat Change - Special Defense, 10%."
+Ember,Fire,Special,Single,25,1,40,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Ember_(move),Burn - 10%.
+Flamethrower,Fire,Special,Single,15,1,90,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Flamethrower_(move),Burn - 10%.
+Mist,Ice,Status,Field - Self,30,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Mist_(move),Applies Mist effect to side.
+Water Gun,Water,Special,Single,25,1,40,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Water_Gun_(move),
+Hydro Pump,Water,Special,Single,5,1,110,80,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Hydro_Pump_(move),
+Surf,Water,Special,Ally and Opponents,15,1,90,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Surf_(move),"Can hit Pokemon using Dive, doubling the power of this move against them."
+Ice Beam,Ice,Special,Single,10,1,90,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Ice_Beam_(move),Freeze - 10%.
+Blizzard,Ice,Special,Opponents,5,1,110,70,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Blizzard_(move),10% chance to freeze Pokemon hit by this move. Bypasses accuracy checks in snow.
+Psybeam,Psychic,Special,Single,20,1,65,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Psybeam_(move),Confusion - 10%.
+Bubble Beam,Water,Special,Single,20,1,65,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Bubble_Beam_(move),"Stat Change - Speed -1, 10%."
+Aurora Beam,Ice,Special,Single,20,1,65,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Aurora_Beam_(move),"Stat Change - Attack -1, 10%."
+Hyper Beam,Normal,Special,Single,5,1,150,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Hyper_Beam_(move),"If move hits, cannot act next turn."
+Peck,Flying,Physical,Single,35,1,35,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Peck_(move),
+Drill Peck,Flying,Physical,Single,20,1,80,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Drill_Peck_(move),
+Low Kick,Fighting,Physical,Single,20,1,*,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Low_Kick_(move),Power varies based on weight of target.
+Counter,Fighting,Physical,Self,20,1,*,100,-5,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Counter_(move),"Deals twice damage of HP lost from last physical move from opponent that hit this Pokemon this turn to that opponent. If move dealt 0 damage (such as from False Swipe at 0 HP), Counter is a base 1 power move."
+Seismic Toss,Fighting,Physical,Single,20,1,*,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Seismic_Toss_(move),Deals damage equal to user's level.
+Strength,Normal,Physical,Single,15,1,80,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Strength_(move),
+Absorb,Grass,Special,Single,25,1,20,100,0,FALSE,HP Draining,https://bulbapedia.bulbagarden.net/wiki/Absorb_(move),Heals 50% of damage dealt (not less than 1).
+Mega Drain,Grass,Special,Single,15,1,40,100,0,FALSE,HP Draining,https://bulbapedia.bulbagarden.net/wiki/Mega_Drain_(move),Heals 50% of damage dealt (not less than 1).
+Leech Seed,Grass,Status,Single,10,,,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Leech_Seed_(move),Seeds - 100%.
+Growth,Normal,Status,Self,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Growth_(move),"Stat Change - Attack +1, Special Attack +1. In harsh sunlight, Attack +2, Special Attack +2."
+Razor Leaf,Grass,Physical,Opponents,25,1,55,95,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Razor_Leaf_(move),Increased critical hit ratio.
+Solar Beam,Grass,Special,Single,10,1,120,100,0,FALSE,Charging,https://bulbapedia.bulbagarden.net/wiki/Solar_Beam_(move),"Takes one turn to charge, except in harsh sunlight. Base power halved in snow, rain, and sand."
+Poison Powder,Poison,Status,Single,35,,,75,0,FALSE,Powder,https://bulbapedia.bulbagarden.net/wiki/Poison_Powder_(move),Poison - 100%.
+Stun Spore,Grass,Status,Single,30,,,75,0,FALSE,Powder,https://bulbapedia.bulbagarden.net/wiki/Stun_Spore_(move),Paralyze - 100%.
+Sleep Powder,Grass,Status,Single,15,,,75,0,FALSE,Powder,https://bulbapedia.bulbagarden.net/wiki/Sleep_Powder_(move),Sleep - 100%.
+Petal Dance,Grass,Special,Self,10,1,120,100,0,TRUE,Dance,https://bulbapedia.bulbagarden.net/wiki/Petal_Dance_(move),* (similar to Outrage)
+String Shot,Bug,Status,Opponents,40,,,95,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/String_Shot_(move),Stat Change - Speed -2.
+Dragon Rage,Dragon,Special,Single,10,1,*,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Dragon_Rage_(move),Fixed damage - 40 HP.
+Fire Spin,Fire,Special,Single,15,1,35,85,0,FALSE,Binding,https://bulbapedia.bulbagarden.net/wiki/Fire_Spin_(move),Binds the target for 4 to 5 turns.
+Thunder Shock,Electric,Special,Single,30,1,40,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Thunder_Shock_(move),Paralyze - 10%.
+Thunderbolt,Electric,Special,Single,15,1,90,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Thunderbolt_(move),Paralyze - 10%
+Thunder Wave,Electric,Status,Single,20,,,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Thunder_Wave_(move),Paralyze.
+Thunder,Electric,Special,Single,10,1,110,70,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Thunder_(move),Paralyze - 30%. Bypasses accuracy checks in rain. Can hit targets in semi-invulnerable state from Fly and Bounce.
+Rock Throw,Rock,Physical,Single,15,1,50,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Rock_Throw_(move),
+Earthquake,Ground,Physical,Ally and Opponents,10,1,100,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Earthquake_(move),Hits pokemon in semi-invulnerable turn of Dig and doubles damage.
+Fissure,Ground,Physical,Single,5,,,30,0,FALSE,OHKO,https://bulbapedia.bulbagarden.net/wiki/Fissure_(move),Fixed Accuracy.
+Dig,Ground,Physical,Single,10,1,80,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Dig_(move),"Spends one turn in semi-invulnerable state, then attacks on next turn."
+Toxic,Poison,Status,Single,10,,,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Toxic_(move),"Badly poisons - 100%. Guaranteed hit if used by a poison type, including in semi-invulnerable states."
+Confusion,Psychic,Special,Single,25,1,50,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Confusion_(move),Confusion - 10%.
+Psychic,Psychic,Special,Single,10,1,90,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Psychic_(move),"Stat Change - Special Defense -1, 10%."
+Hypnosis,Psychic,Status,Single,20,,,60,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Hypnosis_(move),Sleep.
+Agility,Psychic,Status,Self,30,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Agility_(move),Stat Change - Speed +2.
+Quick Attack,Normal,Physical,Single,30,1,40,100,1,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Quick_Attack_(move),
+Teleport,Psychic,Status,Self,20,,,,-6,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Teleport_(move),"Switches user out, if could normally do so."
+Night Shade,Ghost,Special,Single,15,,*,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Night_Shade_(move),Deals damage equal to user's level.
+Mimic,Normal,Status,Single,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Mimic_(move),See page.
+Screech,Normal,Status,Single,40,,,85,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Screech_(move),Decreases target's Defense by 2 stat stages.
+Double Team,Normal,Status,Self,15,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Double_Team_(move),Stat Change - Evasion +1.
+Recover,Normal,Status,Self,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Recover_(move),"Restores 50% of max HP, rounded down."
+Harden,Normal,Status,Self,30,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Harden_(move),Stat Change - Defense +1.
+Minimize,Normal,Status,Self,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Minimize_(move),Stat Change - Evasion +2. Applies Minimized status.
+Smokescreen,Normal,Status,Single,20,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Smokescreen_(move),Stat Change - Accuracy -1.
+Confuse Ray,Ghost,Status,Single,10,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Confuse_Ray_(move),Confusion - 100%.
+Withdraw,Water,Status,Self,40,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Withdraw_(move),Stat Change - Defense +1.
+Defense Curl,Normal,Status,Self,40,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Defense_Curl_(move),Stat Change - Defense +1. Doubles power of Rollout as long as user remains in battle.
+Light Screen,Psychic,Status,Field - Self,30,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Light_Screen_(move),Applies Light Screen to user's side of field.
+Haze,Ice,Status,All,30,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Haze_(move),Reset stat stages of all Pokemon on the field.
+Reflect,Psychic,Status,Field - Self,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Reflect_(move),Applies Reflect to user's side of field.
+Focus Energy,Normal,Status,Self,30,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Focus_Energy_(move),Stat Change - Critical Hit Ratio +2.
+Metronome,Normal,Status,Self,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Metronome_(move),*
+Self-Destruct,Normal,Physical,Ally and Opponents,5,1,200,100,0,FALSE,Explosive,https://bulbapedia.bulbagarden.net/wiki/Self-Destruct_(move),"Causes user to faint after attack, unless misses or target is immune."
+Lick,Ghost,Physical,Single,30,1,30,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Lick_(move),Paralyze - 30%.
+Smog,Poison,Special,Single,20,1,30,70,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Smog_(move),Poison - 40%.
+Sludge,Poison,Special,Single,20,1,65,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Sludge_(move),Poison - 30%.
+Fire Blast,Fire,Special,Single,5,1,110,85,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Fire_Blast_(move),Burn - 10%.
+Waterfall,Water,Physical,Single,15,1,80,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Waterfall_(move),Flinch - 20%.
+Swift,Normal,Special,Opponents,20,1,60,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Swift_(move),Bypasses accuracy checks.
+Amnesia,Psychic,Status,Self,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Amnesia_(move),Stat Change - Special Defense +2.
+Soft-Boiled,Normal,Status,Self,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Soft-Boiled_(move),"Restores 50% of max HP, rounded down."
+High Jump Kick,Fighting,Physical,Single,10,1,130,90,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/High_Jump_Kick_(move),"If does not deal damage (due to missing, type immunity, or Protect), user loses HP equal to half max HP, rounded down."
+Glare,Normal,Status,Single,30,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Glare_(move),Paralyze - 100%.
+Dream Eater,Psychic,Special,Single,15,1,100,100,0,FALSE,HP Draining,https://bulbapedia.bulbagarden.net/wiki/Dream_Eater_(move),"Can only be used on sleeping targets. 50% of damage dealt is restored to HP, minimum 1."
+Poison Gas,Poison,Status,Opponents,40,,,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Poison_Gas_(move),Poisons - 100%.
+Leech Life,Bug,Physical,Single,10,1,80,100,0,TRUE,HP Draining,https://bulbapedia.bulbagarden.net/wiki/Leech_Life_(move),"50% of damage dealt is restored to HP, minimum 1."
+Sky Attack,Flying,Physical,Single,5,1,140,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Sky_Attack_(move),"Takes one turn to charge. Flinch - 30%. Critical hit ratio +1. If cannot execute attack after charging, will execute when able (such as due to flinching, sleep, etc.)"
+Transform,Normal,Status,Single,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Transform_(move),*
+Spore,Grass,Status,Single,15,,,100,0,FALSE,Powder,https://bulbapedia.bulbagarden.net/wiki/Spore_(move),Sleep 100%
+Splash,Normal,Status,Self,40,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Splash_(move),No effect.
+Acid Armor,Poison,Status,Self,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Acid_Armor_(move),Stat Change - Defense +2.
+Crabhammer,Water,Physical,Single,10,1,100,90,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Crabhammer_(move),Increased critical hit ratio.
+Explosion,Normal,Physical,Ally and Opponents,5,1,250,100,0,FALSE,Explosive,https://bulbapedia.bulbagarden.net/wiki/Explosion_(move),"Causes user to faint after attack, unless target has already fainted."
+Fury Swipes,Normal,Physical,Single,15,*,18,80,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Fury_Swipes_(move),Hits 2-5 times.
+Rest,Psychic,Status,Self,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Rest_(move),"User falls asleep for 2 turns, restoring HP to max amount, curing non-volatile status conditions. Other particulars on page."
+Rock Slide,Rock,Physical,Opponents,10,1,75,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Rock_Slide_(move),30% chance of flinching.
+Conversion,Normal,Status,Self,30,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Conversion_(move),Changes type to match move type in first move slot.
+Tri Attack,Normal,Special,Single,10,1,80,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Tri_Attack_(move),"20% chance to apply a status effect. If applied, equal chance to apply paralysis, freeze, or burn."
+Super Fang,Normal,Physical,Single,10,,,90,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Super_Fang_(move),"Deals damage equal to 50% of current HP, rounded down, minimum 1."
+Slash,Normal,Physical,Single,20,1,70,100,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Slash_(move),Increased critical hit ratio.
+Substitute,Normal,Status,Self,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Substitute_(move),*
+Struggle,Normal,Physical,Self,1,1,50,,0,TRUE,Recoil,https://bulbapedia.bulbagarden.net/wiki/Struggle_(move),*
+Sketch,Normal,Status,Single,1,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Sketch_(move),*
+Triple Kick,Fighting,Physical,Single,10,3,*,*,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Triple_Kick_(move),"Base power of kicks are 10, then 20, then 30. Each kick has accuracy of 90%, if one kick misses, move ends."
+Thief,Dark,Physical,Single,25,1,60,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Thief_(move),*
+Flame Wheel,Fire,Physical,Single,25,1,60,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Flame_Wheel_(move),Burn - 10%.
+Snore,Normal,Special,Single,15,1,50,100,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Snore_(move),Can only be used if asleep. 30% chance to flinch.
+Curse,Ghost,Status,Self,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Curse_(move),*
+Flail,Normal,Physical,Single,15,1,*,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Flail_(move),*
+Conversion 2,Normal,Status,Single,30,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Conversion_2_(move),Bypasses accuracy checks. Changes type into a random type that resists or is immune to the type of the move used by target. Fails if move was Stellar type.
+Aeroblast,Flying,Special,Single,5,1,100,95,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Aeroblast_(move),Increased critical hit ratio.
+Cotton Spore,Grass,Status,Opponents,40,,,100,0,FALSE,Powder,https://bulbapedia.bulbagarden.net/wiki/Cotton_Spore_(move),Lower Speed 2 stages
+Reversal,Fighting,Physical,Single,15,,,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Reversal_(move),*
+Spite,Ghost,Status,Single,10,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Spite_(move),Decreases PP of last used move of target by 4.
+Powder Snow,Ice,Special,Opponents,25,1,40,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Powder_Snow_(move),Freeze - 10%.
+Protect,Normal,Status,Self,10,,,,4,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Protect_(move),
+Mach Punch,Fighting,Physical,Single,30,1,40,100,1,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Mach_Punch_(move),
+Scary Face,Normal,Status,Single,10,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Scary_Face_(move),Lowers target's Speed by two stages.
+Sweet Kiss,Fairy,Status,Single,10,,,75,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Sweet_Kiss_(move),Confusion - 100%.
+Belly Drum,Normal,Status,Self,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Belly_Drum_(move),"Stat Change - Attack, Max. Lose HP equal to 50% max HP (rounded down). Move fails if Attack already +6 or if cannot lose that HP."
+Sludge Bomb,Poison,Special,Single,10,1,90,100,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Sludge_Bomb_(move),30% chance of poisoning the target.
+Mud-Slap,Ground,Special,Single,10,1,20,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Mud-Slap_(move),Stat Change - Accuracy -1.
+Spikes,Ground,Status,Field - Opponents,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Spikes_(move),Applies Spikes to opponents side of field.
+Zap Cannon,Electric,Special,Single,5,1,120,50,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Zap_Cannon_(move),Paralyzes the target.
+Destiny Bond,Ghost,Status,Self,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Destiny_Bond_(move),Applies Destiny Bond status to this Pokemon.
+Perish Song,Normal,Status,All,5,,,,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Perish_Song_(move),
+Icy Wind,Ice,Special,Opponents,15,1,55,95,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Icy_Wind_(move),Lowers Speed of Pokemon hit by this move.
+Detect,Fighting,Status,Self,5,,,,4,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Detect_(move),
+Bone Rush,Ground,Physical,Single,10,*,25,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Triple_Kick_(move),Hits 2-5 times.
+Lock-On,Normal,Status,Single,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Lock-On_(move),*
+Outrage,Dragon,Physical,Self,10,1,120,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Outrage_(move),*
+Sandstorm,Rock,Status,Field,10,,,,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Sandstorm_(move),Changes the weather to sandstorm.
+Giga Drain,Grass,Special,Single,10,1,75,100,0,FALSE,HP Draining,https://bulbapedia.bulbagarden.net/wiki/Giga_Drain_(move),Resotes HP equal to 50% of damage dealt (not less than 1).
+Endure,Normal,Status,Self,10,,,,4,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Endure_(move),*
+Charm,Fairy,Status,Single,20,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Charm_(move),Stat Change - Attack -2.
+Rollout,Rock,Physical,Single,20,1,30,90,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Rollout_(move),"Consecutively executed move over 5 turns, where each attack doubles in power."
+False Swipe,Normal,Physical,Single,40,1,40,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/False_Swipe_(move),Will not reduce target's HP below 1.
+Swagger,Normal,Status,Single,15,,,85,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Swagger_(move),Stat Change - Attack +2. Confusion - 100%.
+Milk Drink,Normal,Status,Self,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Milk_Drink_(move),"Restores 50% of max HP, rounded up."
+Spark,Electric,Physical,Single,20,1,65,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Spark_(move),Paralysis - 30%.
+Fury Cutter,Bug,Physical,Single,20,1,40,95,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Fury_Cutter_(move),"Every time this move is used successively, its power doubles, to a maximum of 160."
+Steel Wing,Steel,Physical,Single,25,1,70,90,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Steel_Wing_(move),10% chance of raising user's Defense.
+Mean Look,Normal,Status,Single,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Mean_Look_(move),*
+Attract,Normal,Status,Single,15,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Attract_(move),*
+Sleep Talk,Normal,Status,Self,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Sleep_Talk_(move),"If user is asleep, call a random move from moveset. *"
+Heal Bell,Normal,Status,Party,5,,,,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Heal_Bell_(move),Cures user and all allies on team of status conditions.
+Present,Normal,Physical,Single,15,,,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Present_(move),*
+Safeguard,Normal,Status,Field - Self,25,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Safeguard_(move),*
+Pain Split,Normal,Status,Single,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Pain_Split_(move),"Sets self and target to half sum of both Pokemon's HP, rounded down. *"
+Sacred Fire,Fire,Physical,Single,5,1,100,95,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Sacred_Fire_(move),Burn - 50%.
+Dynamic Punch,Fighting,Physical,Single,5,1,100,50,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Dynamic_Punch_(move),Confusion - 100%.
+Megahorn,Bug,Physical,Single,10,1,120,85,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Megahorn_(move),
+Dragon Breath,Dragon,Special,Single,20,1,60,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Dragon_Breath_(move),Paralysis - 30%.
+Baton Pass,Normal,Status,Self,40,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Baton_Pass_(move),"Switches user out, passing all stat stage changes to the switching in Pokemon. *"
+Encore,Normal,Status,Single,5,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Encore_(move),*
+Rapid Spin,Normal,Physical,Single,40,1,50,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Rapid_Spin_(move),*
+Sweet Scent,Normal,Status,Opponents,20,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Sweet_Scent_(move),Stat Change - Evasion -2.
+Iron Tail,Steel,Physial,Single,15,1,100,75,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Iron_Tail_(move),"Stat Change - Defense -1, 30%."
+Metal Claw,Steel,Physical,Single,35,1,50,95,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Metal_Claw_(move),"Stat Change - Attack +1, 10%."
+Morning Sun,Normal,Status,Self,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Morning_Sun_(move),*
+Synthesis,Grass,Status,Self,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Synthesis_(move),*
+Moonlight,Fairy,Status,Self,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Moonlight_(move),*
+Cross Chop,Fighting,Physical,Single,5,1,100,80,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Cross_Chop_(move),Crit Ratio +1.
+Twister,Dragon,Special,Opponents,20,1,40,100,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Twister_(move),"20% chance of causing Pokemon hit by this move to flinch. Can hit Pokemon using Fly and Bounce, doubling the power of this move against them."
+Rain Dance,Water,Status,Field,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Rain_Dance_(move),Changes the weather to rain.
+Sunny Day,Fire,Status,Field,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Sunny_Day_(move),Changes the weather to sun.
+Crunch,Dark,Physical,Single,15,1,80,100,0,TRUE,Biting,https://bulbapedia.bulbagarden.net/wiki/Crunch_(move),20% chance of lowering the target's Defense by one stage.
+Mirror Coat,Psychic,Special,Self,20,,*,100,-5,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Mirror_Coat_(move),*
+Psych Up,Normal,Status,Single,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Psych_Up_(move),Changes users stat stages to that of the target. *
+Extreme Speed,Normal,Physical,Single,5,1,80,100,2,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Extreme_Speed_(move),
+Ancient Power,Rock,Special,Single,5,1,60,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Ancient_Power_(move),"Stat Change - 6 main stats, 10%."
+Shadow Ball,Ghost,Special,Single,15,1,80,100,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Shadow_Ball_(move),"Lower Special Defense, 1 stage, 20%"
+Future Sight,Psychic,Special,Single,10,1,120,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Future_Sight_(move),*
+Rock Smash,Fighting,Physical,Single,15,1,40,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Rock_Smash_(move),Stat Change - Defense -1 50%.
+Whirlpool,Water,Special,Single,15,1,35,85,0,FALSE,Binding,https://bulbapedia.bulbagarden.net/wiki/Whirlpool_(move),*
+Beat Up,Dark,Physical,Single,10,*,*,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Beat_Up_(move),*
+Fake Out,Normal,Physical,Single,10,1,40,100,3,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Fake_Out_(move),Flinches target. Can only be used on first turn selecting a move.
+Uproar,Normal,Special,Self,10,1,90,100,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Uproar_(move),*
+Stockpile,Normal,Status,Self,20,,,,0,FALSE,*,https://bulbapedia.bulbagarden.net/wiki/Stockpile_(move),*
+Spit Up,Normal,Special,Single,10,1,*,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Spit_Up_(move),*
+Swallow,Normal,Status,Self,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Swallow_(move),*
+Heat Wave,Fire,Special,Opponents,10,1,95,90,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Heat_Wave_(move),10% chance of burning Pokemon hit by this move.
+Torment,Dark,Status,Single,15,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Torment_(move),*
+Flatter,Dark,Status,Single,15,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Flatter_(move),Stat Change - Special Attack +1. Confusion - 100%.
+Will-O-Wisp,Fire,Status,Single,15,,,85,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Will-O-Wisp_(move),Burn - 100%.
+Memento,Dark,Status,Single,10,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Memento_(move),"Stat Change - Attack -2, Special Attack -2. Self faints. *"
+Facade,Normal,Physical,Single,20,1,70,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Facade_(move),"Base power is doubled if poisoned, paralyzed, or burned. Ignores burn's effect of halving physical moves."
+Focus Punch,Fighting,Physical,Single,20,1,150,100,-3,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Focus_Punch_(move),"If hit by a damaging move before this attack would be made, this attack does not occur."
+Follow Me,Normal,Status,Self,20,,,,2,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Follow_Me_(move),*
+Charge,Electric,Status,Self,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Charge_(move),*
+Taunt,Dark,Status,Single,20,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Taunt_(move),
+Helping Hand,Normal,Status,Ally,20,,,,5,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Helping_Hand_(move),*
+Trick,Psychic,Status,Single,10,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Trick_(move),*
+Role Play,Psychic,Status,Single,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Role_Play_(move),*
+Wish,Normal,Status,Self,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Wish_(move),*
+Ingrain,Grass,Status,Self,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Ingrain_(move),*
+Superpower,Fighting,Physical,Single,5,1,120,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Superpower_(move),"Self stat change - Attack -1, Defense -1."
+Magic Coat,Psychic,Status,Single,15,,,,4,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Magic_Coat_(move),*
+Recycle,Normal,Status,Self,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Recycle_(move),*
+Brick Break,Fighting,Physical,Single,15,1,75,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Brick_Break_(move),"Removes Light Screen, Reflect, and Aurora Veil from the target's side of the field, before dealing damage."
+Yawn,Normal,Status,Single,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Yawn_(move),Status - Drowsy. *
+Knock Off,Dark,Physical,Single,20,1,65,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Knock_Off_(move),*
+Endeavor,Normal,Physical,Single,5,,,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Endeavor_(move),Sets target's HP to users.  Fails if target's HP is lower than users.
+Eruption,Fire,Special,Opponents,5,1,150,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Eruption_(move),Base power is adjusted by the percentage of max HP user is at. Minimum base power 1.
+Skill Swap,Psychic,Status,Single,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Skill_Swap_(move),*
+Imprison,Psychic,Status,Self,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Imprison_(move),*
+Dive,Water,Physical,Single,10,1,80,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Dive_(move),*
+Arm Thrust,Fighting,Physical,Single,20,*,15,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Arm_Thrust_(move),*
+Tail Glow,Bug,Status,Self,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Tail_Glow_(move),Stat Change - Special Attack +3.
+Luster Purge,Psychic,Special,Single,5,1,95,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Luster_Purge_(move),"Stat Change - Special Defense -1, 50%."
+Mist Ball,Psychic,Special,Single,5,1,95,100,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Mist_Ball_(move),"Stat Change - Special Attack -1, 50%."
+Feather Dance,Flying,Status,Single,15,,,100,0,FALSE,Dance,https://bulbapedia.bulbagarden.net/wiki/Feather_Dance_(move),Stat Change - Attack -2.
+Teeter Dance,Normal,Status,Ally and Opponents,20,,,100,0,FALSE,Dance,https://bulbapedia.bulbagarden.net/wiki/Teeter_Dance_(move),Confusion - 100%.
+Blaze Kick,Fire,Physical,Single,10,1,85,90,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Blaze_Kick_(move),Increased Critical Hit Ratio. Burn - 10%.
+Slack Off,Normal,Status,Self,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Slack_Off_(move),"Restores 50% of max HP, rounded up."
+Hyper Voice,Normal,Special,Opponents,10,1,90,100,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Hyper_Voice_(move),
+Poison Fang,Poison,Physical,Single,15,1,50,100,0,TRUE,Biting,https://bulbapedia.bulbagarden.net/wiki/Poison_Fang_(move),Badly Poison - 50%.
+Crush Claw,Normal,Physical,Single,10,1,75,95,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Crush_Claw_(move),"Stat Change - Defense -1, 50%."
+Blast Burn,Fire,Special,Single,5,1,150,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Blast_Burn_(move),User cannot move on next turn (if hits).
+Hydro Cannon,Water,Special,Single,5,1,150,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Hydro_Cannon_(move),User cannot move on next turn (if hits).
+Meteor Mash,Steel,Physical,Single,20,1,90,90,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Meteor_Mash_(move),20% chance to raise user's Attack by 1 stage.
+Astonish,Ghost,Physical,Single,15,1,30,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Astonish_(move),Flinch - 30%.
+Weather Ball,Normal,Special,Single,10,1,50,100,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Weather_Ball_(move),"In any type of weather, power doubles to 100 and the type matches the weather."
+Fake Tears,Dark,Status,Single,20,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Fake_Tears_(move),"Stat Change - Special Defense, -2."
+Air Cutter,Flying,Special,Single,25,1,60,95,0,FALSE,"Wind, Slicing",https://bulbapedia.bulbagarden.net/wiki/Air_Cutter_(move),Increased critical hit ratio.
+Overheat,Fire,Special,Single,5,1,130,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Overheat_(move),Stat Change Self - Special Attack -2.
+Rock Tomb,Rock,Physical,Single,15,1,60,95,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Rock_Tomb_(move),Stat Change - Speed -1.
+Metal Sound,Steel,Status,Single,40,,,,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Metal_Sound_(move),Lowers target's Special Defense by 2 stages.
+Tickle,Normal,Status,Single,20,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Tickle_(move),"Stat Change - Attack -1, Defense -1."
+Cosmic Power,Psychic,Status,Self,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Cosmic_Power_(move),"Stat Change - Defense +1, Special Defense +1."
+Water Spout,Water,Special,Opponents,5,1,150,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Water_Spout_(move),Base power is adjusted by the percentage of max HP user is at. Minimum base power 1.
+Shadow Punch,Ghost,Physical,Single,20,1,60,,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Shadow_Punch_(move),
+Extrasensory,Psychic,Special,Single,20,1,80,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Extrasensory_(move),Flinch - 10%.
+Sand Tomb,Ground,Physical,Single,15,1,35,85,0,FALSE,Binding,https://bulbapedia.bulbagarden.net/wiki/Sand_Tomb_(move),*
+Sheer Cold,Ice,Special,Single,5,,,30,0,FALSE,OHKO,https://bulbapedia.bulbagarden.net/wiki/Sheer_Cold_(move),Fixed Accuracy. Ice types are immune.
+Muddy Water,Water,Special,Opponents,10,1,90,85,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Muddy_Water_(move),"Stat Change - Accuracy -1, 30%."
+Bullet Seed,Grass,Physical,Single,30,2-5,25,100,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Bullet_Seed_(move),"35% to hit 2 times, 35% to hit 3 times, 15% to hit 4 times, 15% to hit 5 times."
+Aerial Ace,Flying,Physical,Single,20,1,60,,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Aerial_Ace_(move),
+Icicle Spear,Ice,Physical,Single,30,*,25,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Icicle_Spear_(move),*
+Iron Defense,Steel,Status,Self,15,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Iron_Defense_(move),Stat Change - Defense +2.
+Block,Normal,Status,Single,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Block_(move),*
+Howl,Normal,Status,Team,40,,,,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Howl_(move),Raises user's and allies' Attack by one stage.
+Dragon Claw,Dragon,Physical,Single,15,1,80,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Dragon_Claw_(move),
+Frenzy Plant,Grass,Special,Single,5,1,150,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Frenzy_Plant_(move),User cannot move on next turn (if hits).
+Bulk Up,Fighting,Status,Self,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Bulk_Up_(move),"Stat Change - Attack +1, Defense +1."
+Bounce,Flying,Physical,Single,5,1,85,85,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Bounce_(move),Paralysis - 30%. *
+Mud Shot,Ground,Special,Single,15,1,55,95,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Mud_Shot_(move),Stat Change - Speed -1.
+Poison Tail,Poison,Physical,Single,25,1,50,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Poison_Tail_(move),Elevated critical hit ratio. Poison - 10%.
+Covet,Normal,Physical,Single,25,1,60,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Covet_(move),*
+Volt Tackle,Electric,Physical,Single,15,1,120,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Volt_Tackle_(move),Recoil - 1/3 damage dealt. Paralysis - 10%.
+Magical Leaf,Grass,Special,Single,20,1,60,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Magical_Leaf_(move),Bypasses accuracy checks.
+Calm Mind,Psychic,Status,Self,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Calm_Mind_(move),"Stat Change - Special Attack +1, Special Defense +1."
+Leaf Blade,Grass,Physical,Single,15,1,90,100,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Leaf_Blade_(move),Increased critical hit ratio.
+Dragon Dance,Dragon,Status,Self,20,,,,0,FALSE,Dance,https://bulbapedia.bulbagarden.net/wiki/Dragon_Dance_(move),"Stat Change - Attack +1, Speed +1."
+Rock Blast,Rock,Physical,Single,10,2-5,25,90,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Rock_Blast_(move),"35% to hit 2 times, 35% to hit 3 times, 15% to hit 4 times, 15% to hit 5 times."
+Shock Wave,Electric,Special,Single,20,1,60,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Shock_Wave_(move),Bypasses accuracy checks.
+Water Pulse,Water,Special,Single,20,1,60,100,0,FALSE,Aura and Pulse,https://bulbapedia.bulbagarden.net/wiki/Water_Pulse_(move),20% chance of confusing the target.
+Doom Desire,Steel,Special,Single,5,1,140,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Doom_Desire_(move),*
+Psycho Boost,Psychic,Special,Single,5,1,140,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Psycho_Boost_(move),"Stat Change - Special Attack -2, self."
+Roost,Flying,Status,Self,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Roost_(move),"Restores 50% of max HP, rounded up. *"
+Gravity,Psychic,Status,Field,5,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Gravity_(move),*
+Hammer Arm,Fighting,Physical,Single,10,1,100,90,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Hammer_Arm_(move),Lowers user's speed by 1 stage.
+Gyro Ball,Steel,Physical,Single,5,1,*,100,0,TRUE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Gyro_Ball_(move),Power is higher the slower the user is than the opponent.
+Healing Wish,Psychic,Status,Self,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Healing_Wish_(move),*
+Brine,Water,Special,Single,10,1,65,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Brine_(move),Power doubles when target is at or below 50%.
+Feint,Normal,Physical,Single,10,1,30,100,2,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Feint_(move),*
+Pluck,Flying,Physical,Single,20,1,60,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Pluck_(move),*
+Tailwind,Flying,Status,Field,15,,,,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Tailwind_(move),*
+Acupressure,Normal,Status,Self or Ally,30,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Acupressure_(move),*
+Metal Burst,Steel,Physical,Self,10,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Metal_Burst_(move),*
+U-turn,Bug,Physical,Single,20,1,70,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/U-turn_(move),Switches the user out.
+Close Combat,Fighting,Physical,Single,5,1,120,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Close_Combat_(move),Lowers user's Defense and Special Defense by one stage each.
+Payback,Dark,Physical,Single,10,1,50,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Payback_(move),"If target moves before user or uses an item, power is doubled."
+Assurance,Dark,Physical,Single,10,1,60,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Assurance_(move),*
+Fling,Dark,Physical,Single,10,1,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Fling_(move),*
+Power Trick,Psychic,Status,Self,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Power_Trick_(move),*
+Gastro Acid,Poison,Status,Single,10,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Gastro_Acid_(move),*
+Copycat,Normal,Status,Self,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Copycat_(move),*
+Power Swap,Psychic,Status,Single,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Power_Swap_(move),*
+Guard Swap,Psychic,Status,Single,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Guard_Swap_(move),*
+Last Resort,Normal,Physical,Single,5,1,140,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Last_Resort_(move),*
+Worry Seed,Grass,Status,Single,10,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Worry_Seed_(move),Changes ability to Insomnia. *
+Sucker Punch,Dark,Physical,Single,5,1,70,100,1,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Sucker_Punch_(move),"Only used if target was going to use a physical or special attack, and has not used their move yet."
+Toxic Spikes,Poison,Status,Opponent - Field,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Toxic_Spikes_(move),*
+Heart Swap,Psychic,Status,Single,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Heart_Swap_(move),*
+Aqua Ring,Water,Status,Self,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Aqua_Ring_(move),*
+Magnet Rise,Electric,Status`,Self,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Magnet_Rise_(move),*
+Flare Blitz,Fire,Physical,Single,15,1,120,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Flare_Blitz_(move),Recoil equal to 1/3 damage. 10% burn target.
+Force Palm,Fighting,Physical,Single,10,1,60,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Force_Palm_(move),Paralysis - 30%.
+Aura Sphere,Fighting,Special,Single,20,1,80,,0,FALSE,"Aura and Pulse, Ball and Bomb",https://bulbapedia.bulbagarden.net/wiki/Aura_Sphere_(move),
+Rock Polish,Rock,Status,Self,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Rock_Polish_(move),Stat Change - Speed +2.
+Poison Jab,Poison,Physical,Single,20,1,80,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Poison_Jab_(move),Poison - 30%.
+Dark Pulse,Dark,Special,Single,15,1,80,100,0,FALSE,Aura and Pulse,https://bulbapedia.bulbagarden.net/wiki/Dark_Pulse_(move),20% chance of causing the target to flinch.
+Night Slash,Dark,Physical,Single,15,1,70,100,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Night_Slash_(move),Increased critical hit ratio.
+Aqua Tail,Water,Physical,Single,10,1,90,90,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Aqua_Tail_(move),
+Seed Bomb,Grass,Physical,Single,15,1,80,100,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Seed_Bomb_(move),
+Air Slash,Flying,Special,Single,15,1,75,95,0,FALSE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Air_Slash_(move),30% chance to cause target to flinch.
+X-Scissor,Bug,Physical,Single,15,1,80,100,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/X-Scissor_(move),
+Bug Buzz,Bug,Special,Single,10,1,90,100,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Bug_Buzz_(move),10% chance of lowering the target's Special Defense by one stage.
+Dragon Pulse,Dragon,Special,Single,10,1,85,100,0,FALSE,Aura and Pulse,https://bulbapedia.bulbagarden.net/wiki/Dragon_Pulse_(move),
+Dragon Rush,Dragon,Physical,Single,10,1,100,75,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Dragon_Rush_(move),Flinch 20%. Double damage to targets using Minimize.
+Power Gem,Rock,Special,Single,20,1,80,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Power_Gem_(move),
+Drain Punch,Fighting,Physical,Single,10,1,75,100,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Drain_Punch_(move),Up to 50% of the damage dealt is restored as HP.
+Vacuum Wave,Fighting,Special,Single,30,1,40,100,1,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Vacuum_Wave_(move),
+Focus Blast,Fighting,Special,Single,5,1,120,70,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Focus_Blast_(move),10% chance of lowering the target's Special Defense by one stage.
+Energy Ball,Grass,Special,Single,10,1,90,100,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Energy_Ball_(move),10% chance of lowering the target's Special Defense by one stage.
+Brave Bird,Flying,Physical,Single,15,1,120,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Brave_Bird_(move),Recoil equal to 1/3 damage.
+Earth Power,Ground,Special,Single,10,1,90,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Earth_Power_(move),"Stat Change - Special Defense -1, 10%."
+Switcheroo,Dark,Status,Single,10,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Switcheroo_(move),*
+Giga Impact,Normal,Physical,Single,5,1,150,90,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Giga_Impact_(move),Has to recharge next turn.
+Nasty Plot,Dark,Status,Self,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Nasty_Plot_(move),Raise Special Attack by 2 stages.
+Bullet Punch,Steel,Physical,Single,30,1,40,100,1,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Bullet_Punch_(move),
+Avalanche,Ice,Physical,Single,10,1,60,100,-4,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Avalanche_(move),"If target damaged user this turn, power is doubled."
+Ice Shard,Ice,Physical,Single,30,1,40,100,1,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Ice_Shard_(move),
+Shadow Claw,Ghost,Physical,Single,15,1,70,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Shadow_Claw_(move),Increased critical hit ratio.
+Thunder Fang,Electric,Physical,Single,15,1,65,95,0,TRUE,Biting,https://bulbapedia.bulbagarden.net/wiki/Thunder_Fang_(move),Paralysis - 10%. Flinch - 10%.
+Ice Fang,Ice,Physical,Single,15,1,65,95,0,TRUE,Biting,https://bulbapedia.bulbagarden.net/wiki/Ice_Fang_(move),Freeze - 10%. Flinch - 10%.
+Fire Fang,Fire,Physical,Single,15,1,65,95,0,TRUE,Biting,https://bulbapedia.bulbagarden.net/wiki/Fire_Fang_(move),Burn - 10%. Flinch - 10%.
+Shadow Sneak,Ghost,Physical,Single,30,1,40,100,1,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Shadow_Sneak_(move),
+Psycho Cut,Psychic,Physical,Single,20,1,70,100,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Psycho_Cut_(move),Increased critical hit ratio.
+Zen Headbutt,Psychic,Physical,Single,15,1,80,90,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Zen_Headbutt_(move),Flinch - 20%.
+Flash Cannon,Steel,Special,Single,10,1,80,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Flash_Cannon_(move),"Stat Change - Special Defense -1, 10%."
+Defog,Flying,Status,Single,15,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Defog_(move),*
+Trick Room,Psychic,Status,Field,5,,,,-7,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Trick_Room_(move),*
+Draco Meteor,Dragon,Special,Single,5,1,130,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Draco_Meteor_(move),"Stat Change - Self, Special Attack -2."
+Discharge,Electric,Special,Ally and Opponents,15,1,80,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Discharge_(move),Paralysis - 30%.
+Lava Plume,Fire,Special,Ally and Opponents,15,1,80,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Lava_Plume_(move),Burn - 30%.
+Leaf Storm,Grass,Special,Single,5,1,130,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Leaf_Storm_(move),"Stat Change - Self, Special Attack -2."
+Power Whip,Grass,Physical,Single,10,1,120,85,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Power_Whip_(move),
+Rock Wrecker,Rock,Physical,Single,5,1,150,90,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Rock_Wrecker_(move),Recharge after.
+Cross Poison,Poison,Physical,Single,20,1,70,100,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Cross_Poison_(move),Increased critical hit ratio. 10% chance of poisoning target.
+Gunk Shot,Poison,Physical,Single,5,1,120,80,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Gunk_Shot_(move),Poison - 30%.
+Iron Head,Steel,Physical,Single,15,1,80,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Iron_Head_(move),30% chance of causing target to flinch.
+Stone Edge,Rock,Physical,Single,5,1,100,80,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Stone_Edge_(move),Increased critical hit ratio.
+Stealth Rock,Rock,Status,Field - Opponent,20,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Stealth_Rock_(move),*
+Grass Knot,Grass,Special,Single,20,1,*,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Grass_Knot_(move),*
+Judgment,Normal,Special,Single,10,1,100,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Judgment_(move),*
+Bug Bite,Bug,Physical,Single,20,1,60,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Bug_Bite_(move),*
+Charge Beam,Electric,Special,Single,10,1,50,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Charge_Beam_(move),"Stat Change - Self, Special Attack +1."
+Wood Hammer,Grass,Physical,Single,15,1,120,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Wood_Hammer_(move),Recoil 1/3 of damage dealt.
+Aqua Jet,Water,Physical,Single,20,1,40,100,1,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Aqua_Jet_(move),
+Attack Order,Bug,Physical,Single,15,1,90,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Attack_Order_(move),Increased crit ratio.
+Defend Order,Bug,Status,Self,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Defend_Order_(move),"Stat Change - Defense +1, Special Defense +1."
+Head Smash,Rock,Physical,Single,5,1,150,80,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Head_Smash_(move),Recoil equal to 1/2 damage dealt.
+Double Hit,Normal,Physical,Single,10,2,35,90,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Double_Hit_(move),
+Roar of Time,Dragon,Special,Single,5,1,150,90,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Roar_of_Time_(move),"If move connects, user has to recharge."
+Spacial Rend,Dragon,Special,Single,5,1,100,95,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Spacial_Rend_(move),Increased critical hit ratio.
+Lunar Dance,Psychic,Status,Self,10,,,,,FALSE,Dance,https://bulbapedia.bulbagarden.net/wiki/Lunar_Dance_(move),*
+Crush Grip,Normal,Physical,Single,5,1,*,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Crush_Grip_(move),*
+Magma Storm,Fire,Special,Single,5,1,100,75,0,FALSE,Binding,https://bulbapedia.bulbagarden.net/wiki/Magma_Storm_(move),*
+Dark Void,Dark,Status,Opponents,10,,,50,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Dark_Void_(move),Sleep - 100%. Can only be used by Darkrai (or a Pokemon transformed into Darkrai).
+Seed Flare,,,,,,,,,,,,
+Ominous Wind,,,,,,,,,,,,
+Shadow Force,,,,,,,,,,,,
+Hone Claws,,,,,,,,,,,,
+Wide Guard,,,,,,,,,,,,
+Guard Split,,,,,,,,,,,,
+Power Split,,,,,,,,,,,,
+Wonder Room,,,,,,,,,,,,
+Psyshock,,,,,,,,,,,,
+Venoshock,,,,,,,,,,,,
+Autotomize,,,,,,,,,,,,
+Rage Powder,Bug,Status,Self,20,,,,2,FALSE,Powder,https://bulbapedia.bulbagarden.net/wiki/Rage_Powder_(move),Redirection
+Telekinesis,,,,,,,,,,,,
+Magic Room,,,,,,,,,,,,
+Smack Down,,,,,,,,,,,,
+Storm Throw,,,,,,,,,,,,
+Flame Burst,,,,,,,,,,,,
+Sludge Wave,,,,,,,,,,,,
+Quiver Dance,,,,,,,,,,,,
+Heavy Slam,Steel,Physical,Single,10,1,*,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Heavy_Slam_(move),
+Synchronoise,,,,,,,,,,,,
+Electro Ball,Electric,Special,Single,10,1,*,100,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Electro_Ball_(move),Power is higher the faster the user is than the opponent.
+Soak,,,,,,,,,,,,
+Flame Charge,,,,,,,,,,,,
+Coil,,,,,,,,,,,,
+Low Sweep,,,,,,,,,,,,
+Acid Spray,Poison,Special,Single,20,1,40,100,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Acid_Spray_(move),Lowers target's Special Defense by 2 stages.
+Foul Play,,,,,,,,,,,,
+Simple Beam,,,,,,,,,,,,
+Entrainment,,,,,,,,,,,,
+After You,,,,,,,,,,,,
+Round,Normal,Special,Single,15,1,60,100,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Round_(move),"If another Pokémon used Round before the user this turn, the user uses this immediately after and all other Rounds are base 120 power this turn."
+Echoed Voice,Normal,Special,Single,15,1,40,100,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Echoed_Voice_(move),"Power increases by 40 for each consecutive turn this has been used, to a maximum of 200."
+Chip Away,,,,,,,,,,,,
+Clear Smog,,,,,,,,,,,,
+Stored Power,,,,,,,,,,,,
+Quick Guard,,,,,,,,,,,,
+Ally Switch,,,,,,,,,,,,
+Scald,,,,,,,,,,,,
+Shell Smash,,,,,,,,,,,,
+Heal Pulse,Psychic,Status,Single,10,1,,,0,FALSE,Aura and Pulse,https://bulbapedia.bulbagarden.net/wiki/Heal_Pulse_(move),Restores up to 50% of the target's maximum HP.
+Hex,,,,,,,,,,,,
+Sky Drop,,,,,,,,,,,,
+Shift Gear,,,,,,,,,,,,
+Circle Throw,,,,,,,,,,,,
+Incinerate,,,,,,,,,,,,
+Quash,,,,,,,,,,,,
+Acrobatics,,,,,,,,,,,,
+Reflect Type,,,,,,,,,,,,
+Retaliate,,,,,,,,,,,,
+Final Gambit,,,,,,,,,,,,
+Bestow,,,,,,,,,,,,
+Inferno,,,,,,,,,,,,
+Water Pledge,,,,,,,,,,,,
+Fire Pledge,,,,,,,,,,,,
+Grass Pledge,,,,,,,,,,,,
+Volt Switch,,,,,,,,,,,,
+Struggle Bug,,,,,,,,,,,,
+Bulldoze,,,,,,,,,,,,
+Frost Breath,,,,,,,,,,,,
+Dragon Tail,,,,,,,,,,,,
+Work Up,,,,,,,,,,,,
+Electroweb,,,,,,,,,,,,
+Wild Charge,Electric,Physical,Single,15,1,90,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Wild_Charge_(move),Recoil equal to 1/4.
+Drill Run,,,,,,,,,,,,
+Dual Chop,,,,,,,,,,,,
+Heart Stamp,,,,,,,,,,,,
+Horn Leech,,,,,,,,,,,,
+Sacred Sword,Fighting,Physical,Single,15,1,90,100,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Sacred_Sword_(move),Ignores the target's Defense and evasion stat changes.
+Razor Shell,Water,Physical,Single,10,1,75,95,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Razor_Shell_(move),50% chance of lowering the target's Defense by one stage.
+Heat Crash,,,,,,,,,,,,
+Leaf Tornado,,,,,,,,,,,,
+Steamroller,,,,,,,,,,,,
+Cotton Guard,,,,,,,,,,,,
+Night Daze,,,,,,,,,,,,
+Psystrike,,,,,,,,,,,,
+Tail Slap,,,,,,,,,,,,
+Hurricane,Flying,Special,Single,10,1,110,70,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Hurricane_(move),30% chance of confusing the target. Bypasses the accuracy check in rain. Accuracy is 50% in sun. Can hit Pokemon using Fly and Bounce.
+Head Charge,,,,,,,,,,,,
+Gear Grind,,,,,,,,,,,,
+Searing Shot,,,,,,,,,,,,
+Techno Blast,,,,,,,,,,,,
+Relic Song,Normal,Special,Opponents,10,1,75,100,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Relic_Song_(move),10% chance of putting Pokemon hit by this move to sleep.
+Secret Sword,,,,,,,,,,,,
+Glaciate,,,,,,,,,,,,
+Bolt Strike,,,,,,,,,,,,
+Blue Flare,,,,,,,,,,,,
+Fiery Dance,,,,,,,,,,,,
+Freeze Shock,,,,,,,,,,,,
+Ice Burn,,,,,,,,,,,,
+Snarl,Dark,Special,Opponents,15,1,55,95,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Snarl_(move),Lowers Special Attack of targets by one stage.
+Icicle Crash,Ice,Physical,Single,10,1,85,90,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Icicle_Crash_(move),30% chance of causing the target to flinch.
+V-create,,,,,,,,,,,,
+Fusion Flare,,,,,,,,,,,,
+Fusion Bolt,,,,,,,,,,,,
+Flying Press,,,,,,,,,,,,
+Mat Block,,,,,,,,,,,,
+Belch,,,,,,,,,,,,
+Rototiller,,,,,,,,,,,,
+Sticky Web,,,,,,,,,,,,
+Fell Stinger,,,,,,,,,,,,
+Phantom Force,,,,,,,,,,,,
+Trick-or-Treat,,,,,,,,,,,,
+Noble Roar,Normal,Status,Single,30,,,,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Noble_Roar_(move),Lowers the Attack and Special Attack of the target by one stage.
+Ion Deluge,,,,,,,,,,,,
+Parabolic Charge,,,,,,,,,,,,
+Forest's Curse,,,,,,,,,,,,
+Petal Blizzard,Grass,Special,Ally and Opponents,15,1,90,100,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Petal_Blizzard_(move),
+Freeze-Dry,,,,,,,,,,,,
+Disarming Voice,Fairy,Special,Opponents,15,1,40,,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Disarming_Voice_(move),
+Parting Shot,Dark,Status,Single,20,,,,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Parting_Shot_(move),Lowers the Attack and Special Attack of the target by one stage. Switches the user out if stats were successfully lowered.
+Topsy-Turvy,,,,,,,,,,,,
+Draining Kiss,,,,,,,,,,,,
+Crafty Shield,,,,,,,,,,,,
+Flower Shield,,,,,,,,,,,,
+Grassy Terrain,,,,,,,,,,,,
+Misty Terrain,,,,,,,,,,,,
+Electrify,,,,,,,,,,,,
+Play Rough,,,,,,,,,,,,
+Fairy Wind,Fairy,Special,Opponents,30,1,40,100,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Fairy_Wind_(move),
+Moonblast,Fairy,Special,Single,15,1,95,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Moonblast_(move),"Lower Special Attack, 1 stage, 30%"
+Boomburst,Normal,Special,Ally and Opponents,10,1,140,100,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Boomburst_(move),
+Fairy Lock,,,,,,,,,,,,
+King's Shield,,,,,,,,,,,,
+Play Nice,,,,,,,,,,,,
+Confide,Normal,Status,Single,20,,,,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Confide_(move),"Lowers the target's Special Attack by one stage. Bypasses Protect, Detect, and Spiky Shield."
+Diamond Storm,,,,,,,,,,,,
+Steam Eruption,,,,,,,,,,,,
+Hyperspace Hole,,,,,,,,,,,,
+Water Shuriken,,,,,,,,,,,,
+Mystical Fire,Fire,Special,Single,10,1,75,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Mystical_Fire_(move),Lowers target's Special Attack by one stage.
+Spiky Shield,,,,,,,,,,,,
+Aromatic Mist,,,,,,,,,,,,
+Eerie Impulse,,,,,,,,,,,,
+Venom Drench,,,,,,,,,,,,
+Powder,,,,,,,,,,,,
+Geomancy,,,,,,,,,,,,
+Magnetic Flux,,,,,,,,,,,,
+Happy Hour,,,,,,,,,,,,
+Electric Terrain,,,,,,,,,,,,
+Dazzling Gleam,Fairy,Special,Opponents,10,1,80,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Dazzling_Gleam_(move),
+Celebrate,,,,,,,,,,,,
+Hold Hands,,,,,,,,,,,,
+Baby-Doll Eyes,,,,,,,,,,,,
+Nuzzle,,,,,,,,,,,,
+Hold Back,,,,,,,,,,,,
+Infestation,,,,,,,,,,,,
+Power-Up Punch,,,,,,,,,,,,
+Oblivion Wing,,,,,,,,,,,,
+Thousand Arrows,,,,,,,,,,,,
+Thousand Waves,,,,,,,,,,,,
+Land's Wrath,,,,,,,,,,,,
+Light of Ruin,,,,,,,,,,,,
+Origin Pulse,Water,Special,Opponents,10,1,110,85,0,FALSE,Aura and Pulse,https://bulbapedia.bulbagarden.net/wiki/Origin_Pulse_(move),
+Precipice Blades,,,,,,,,,,,,
+Dragon Ascent,,,,,,,,,,,,
+Hyperspace Fury,,,,,,,,,,,,
+Shore Up,,,,,,,,,,,,
+First Impression,,,,,,,,,,,,
+Baneful Bunker,,,,,,,,,,,,
+Spirit Shackle,,,,,,,,,,,,
+Darkest Lariat,,,,,,,,,,,,
+Sparkling Aria,Water,Special,Ally and Opponents,10,1,90,100,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Sparkling_Aria_(move),Heals burn.
+Ice Hammer,Ice,Physical,Single,10,1,100,90,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Ice_Hammer_(move),Lowers user's speed by 1 stage.
+Floral Healing,,,,,,,,,,,,
+High Horsepower,,,,,,,,,,,,
+Strength Sap,,,,,,,,,,,,
+Solar Blade,Grass,Physical,Single,10,1,125,100,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Solar_Blade_(move),"Charges up on the first turn and used on the second turn, unless used during sun. Power is halved during rain, snow, or sandstorm."
+Leafage,,,,,,,,,,,,
+Spotlight,,,,,,,,,,,,
+Toxic Thread,,,,,,,,,,,,
+Laser Focus,,,,,,,,,,,,
+Gear Up,,,,,,,,,,,,
+Throat Chop,Dark,Physical,Single,15,1,80,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Throat_Chop_(move),Prevents the target from using sound moves for two turns.
+Pollen Puff,Bug,Special,Single,15,1,90,100,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Pollen_Puff_(move),"If this targets an ally, instead restores up to 50% of target's maximum HP."
+Anchor Shot,,,,,,,,,,,,
+Psychic Terrain,,,,,,,,,,,,
+Lunge,,,,,,,,,,,,
+Fire Lash,,,,,,,,,,,,
+Power Trip,,,,,,,,,,,,
+Burn Up,,,,,,,,,,,,
+Speed Swap,,,,,,,,,,,,
+Smart Strike,,,,,,,,,,,,
+Purify,,,,,,,,,,,,
+Revelation Dance,,,,,,,,,,,,
+Core Enforcer,,,,,,,,,,,,
+Trop Kick,,,,,,,,,,,,
+Instruct,,,,,,,,,,,,
+Beak Blast,,,,,,,,,,,,
+Clanging Scales,,,,,,,,,,,,
+Dragon Hammer,,,,,,,,,,,,
+Brutal Swing,,,,,,,,,,,,
+Aurora Veil,,,,,,,,,,,,
+Shell Trap,,,,,,,,,,,,
+Fleur Cannon,,,,,,,,,,,,
+Psychic Fangs,Psychic,Physical,Single,10,1,85,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Psychic_Fangs_(move),"Removes Light Screen, Reflect, and Aurora Veil from the target's side of the field, before dealing damage."
+Stomping Tantrum,,,,,,,,,,,,
+Shadow Bone,,,,,,,,,,,,
+Accelerock,,,,,,,,,,,,
+Liquidation,,,,,,,,,,,,
+Prismatic Laser,,,,,,,,,,,,
+Spectral Thief,,,,,,,,,,,,
+Sunsteel Strike,,,,,,,,,,,,
+Moongeist Beam,,,,,,,,,,,,
+Tearful Look,,,,,,,,,,,,
+Zing Zap,,,,,,,,,,,,
+Nature's Madness,,,,,,,,,,,,
+Multi-Attack,,,,,,,,,,,,
+Mind Blown,,,,,,,,,,,,
+Plasma Fists,Electric,Physical,Single,15,1,100,100,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Plasma_Fists_(move),"For the rest of the turn, all Normal type moves are Electric type."
+Photon Geyser,,,,,,,,,,,,
+Double Iron Bash,Steel,Physical,Single,5,2,60,100,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Double_Iron_Bash_(move),Each hit has a 30% chance to flinch the target.
+Dynamax Cannon,,,,,,,,,,,,
+Snipe Shot,,,,,,,,,,,,
+Jaw Lock,,,,,,,,,,,,
+Stuff Cheeks,,,,,,,,,,,,
+No Retreat,,,,,,,,,,,,
+Tar Shot,,,,,,,,,,,,
+Magic Powder,Psychic,Status,Single,20,,,100,0,FALSE,Powder,https://bulbapedia.bulbagarden.net/wiki/Magic_Powder_(move),Change target's type to Psychic
+Dragon Darts,,,,,,,,,,,,
+Teatime,,,,,,,,,,,,
+Octolock,,,,,,,,,,,,
+Bolt Beak,,,,,,,,,,,,
+Fishious Rend,,,,,,,,,,,,
+Court Change,,,,,,,,,,,,
+Clangorous Soul,,,,,,,,,,,,
+Body Press,,,,,,,,,,,,
+Decorate,,,,,,,,,,,,
+Drum Beating,,,,,,,,,,,,
+Snap Trap,,,,,,,,,,,,
+Pyro Ball,Fire,Physical,Single,5,1,120,90,0,FALSE,Ball and Bomb,https://bulbapedia.bulbagarden.net/wiki/Pyro_Ball_(move),10% chance of burning the target.
+Behemoth Blade,Steel,Physical,Single,5,1,100,100,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Behemoth_Blade_(move),
+Behemoth Bash,,,,,,,,,,,,
+Aura Wheel,,,,,,,,,,,,
+Breaking Swipe,,,,,,,,,,,,
+Branch Poke,,,,,,,,,,,,
+Overdrive,Electric,Special,Opponents,10,1,80,100,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Overdrive_(move),
+Apple Acid,,,,,,,,,,,,
+Grav Apple,,,,,,,,,,,,
+Spirit Break,,,,,,,,,,,,
+Strange Steam,,,,,,,,,,,,
+Life Dew,,,,,,,,,,,,
+Obstruct,,,,,,,,,,,,
+False Surrender,,,,,,,,,,,,
+Meteor Assault,,,,,,,,,,,,
+Eternabeam,,,,,,,,,,,,
+Steel Beam,,,,,,,,,,,,
+Expanding Force,,,,,,,,,,,,
+Steel Roller,,,,,,,,,,,,
+Scale Shot,,,,,,,,,,,,
+Meteor Beam,,,,,,,,,,,,
+Shell Side Arm,,,,,,,,,,,,
+Misty Explosion,,,,,,,,,,,,
+Grassy Glide,,,,,,,,,,,,
+Rising Voltage,,,,,,,,,,,,
+Terrain Pulse,Normal,Special,Single,10,1,50,100,0,FALSE,Aura and Pulse,https://bulbapedia.bulbagarden.net/wiki/Terrain_Pulse_(move),"If user is grounded in any terrain, the power doubles to 100 and the type changes to match the terrain."
+Skitter Smack,,,,,,,,,,,,
+Burning Jealousy,,,,,,,,,,,,
+Lash Out,,,,,,,,,,,,
+Poltergeist,,,,,,,,,,,,
+Corrosive Gas,,,,,,,,,,,,
+Coaching,,,,,,,,,,,,
+Flip Turn,,,,,,,,,,,,
+Triple Axel,,,,,,,,,,,,
+Dual Wingbeat,,,,,,,,,,,,
+Scorching Sands,,,,,,,,,,,,
+Jungle Healing,,,,,,,,,,,,
+Wicked Blow,Dark,Physical,Single,5,1,75,100,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Wicked_Blow_(move),Always results in a critical hit.
+Surging Strikes,Water,Physical,Single,5,3,25,100,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Surging_Strikes_(move),Always results in a critical hit.
+Thunder Cage,,,,,,,,,,,,
+Dragon Energy,,,,,,,,,,,,
+Freezing Glare,,,,,,,,,,,,
+Fiery Wrath,,,,,,,,,,,,
+Thunderous Kick,,,,,,,,,,,,
+Glacial Lance,,,,,,,,,,,,
+Astral Barrage,,,,,,,,,,,,
+Eerie Spell,Psychic,Special,Single,5,1,80,100,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Eerie_Spell_(move),Decreases the PP of the last move used by the target by 3.
+Dire Claw,,,,,,,,,,,,
+Psyshield Bash,,,,,,,,,,,,
+Power Shift,,,,,,,,,,,,
+Stone Axe,Rock,Physical,Single,15,1,65,90,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Stone_Axe_(move),Sets up Stealth Rock.
+Springtide Storm,Fairy,Special,Opponents,10,1,100,80,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Springtide_Storm_(move),30% chance of lowering the Attack of Pokemon hit by this move.
+Mystical Power,,,,,,,,,,,,
+Raging Fury,,,,,,,,,,,,
+Wave Crash,,,,,,,,,,,,
+Chloroblast,,,,,,,,,,,,
+Mountain Gale,,,,,,,,,,,,
+Victory Dance,,,,,,,,,,,,
+Headlong Rush,Ground,Physical,Single,5,1,120,100,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Headlong_Rush_(move),Lowers user's Defense and Special Defense by one stage each.
+Barb Barrage,,,,,,,,,,,,
+Esper Wing,,,,,,,,,,,,
+Bitter Malice,,,,,,,,,,,,
+Shelter,,,,,,,,,,,,
+Triple Arrows,,,,,,,,,,,,
+Infernal Parade,,,,,,,,,,,,
+Ceaseless Edge,Dark,Physical,Single,15,1,65,90,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Ceaseless_Edge_(move),Sets up one layer of Spikes.
+Bleakwind Storm,Flying,Special,Opponents,10,1,100,80,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Bleakwind_Storm_(move),30% chance of reducing the Speed of Pokemon hit by this move. Bypasses accuracy checks in rain.
+Wildbolt Storm,Electric,Special,Opponents,10,1,100,80,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Wildbolt_Storm_(move),20% of paralzing Pokemon hit by this move. Bypasses accuracy checks in rain.
+Sandsear Storm,Ground,Special,Opponents,10,1,100,80,0,FALSE,Wind,https://bulbapedia.bulbagarden.net/wiki/Sandsear_Storm_(move),20% chance of burning Pokemon hit by this move. Bypasses accuracy checks in rain. 
+Lunar Blessing,,,,,,,,,,,,
+Take Heart,,,,,,,,,,,,
+Tera Blast,Normal,Special,Single,10,1,80,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Tera_Blast_(move),"If Terastallized, type matches Tera Type and becomes physical if Attack stat is higher than Special Attack stat (including stat changes)."
+Silk Trap,,,,,,,,,,,,
+Axe Kick,,,,,,,,,,,,
+Last Respects,,,,,,,,,,,,
+Lumina Crash,,,,,,,,,,,,
+Order Up,,,,,,,,,,,,
+Jet Punch,Water,Physical,Single,15,1,60,100,1,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Jet_Punch_(move),
+Spicy Extract,,,,,,,,,,,,
+Spin Out,,,,,,,,,,,,
+Population Bomb,Normal,Physical,Single,10,10,20,90,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Population_Bomb_(move),
+Ice Spinner,Ice,Physical,Single,15,1,80,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Ice_Spinner_(move),Remove terrain on the battlefield.
+Glaive Rush,,,,,,,,,,,,
+Revival Blessing,,,,,,,,,,,,
+Salt Cure,,,,,,,,,,,,
+Triple Dive,,,,,,,,,,,,
+Mortal Spin,,,,,,,,,,,,
+Doodle,,,,,,,,,,,,
+Fillet Away,,,,,,,,,,,,
+Kowtow Cleave,Dark,Physical,Single,10,1,85,,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Kowtow_Cleave_(move),
+Flower Trick,,,,,,,,,,,,
+Torch Song,Fire,Special,Single,10,1,80,100,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Torch_Song_(move),Raises user's Special Attack by one stage.
+Aqua Step,,,,,,,,,,,,
+Raging Bull,,,,,,,,,,,,
+Make It Rain,Steel,Special,Opponents,5,1,120,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Make_It_Rain_(move),Lowers user's Special Attack by 1 stage.
+Psyblade,Psychic,Physical,Single,15,1,80,100,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Psyblade_(move),"If on Electric Terrain, power is 120."
+Hydro Steam,,,,,,,,,,,,
+Ruination,,,,,,,,,,,,
+Collision Course,,,,,,,,,,,,
+Electro Drift,,,,,,,,,,,,
+Shed Tail,,,,,,,,,,,,
+Chilly Reception,,,,,,,,,,,,
+Tidy Up,,,,,,,,,,,,
+Snowscape,Ice,Status,Field,10,,,,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Snowscape_(move),Changes the weather to snow.
+Pounce,,,,,,,,,,,,
+Trailblaze,,,,,,,,,,,,
+Chilling Water,,,,,,,,,,,,
+Hyper Drill,,,,,,,,,,,,
+Twin Beam,,,,,,,,,,,,
+Rage Fist,Ghost,Physical,Single,10,1,50,100,0,TRUE,Punching,https://bulbapedia.bulbagarden.net/wiki/Rage_Fist_(move),Its power increases by 50 each time the user has been hit this battle.
+Armor Cannon,,,,,,,,,,,,
+Bitter Blade,Fire,Physical,Single,10,1,90,100,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Bitter_Blade_(move),Up to 50% of the damage dealt is restored as HP.
+Double Shock,,,,,,,,,,,,
+Gigaton Hammer,,,,,,,,,,,,
+Comeuppance,,,,,,,,,,,,
+Aqua Cutter,Water,Physical,Single,20,1,70,100,0,TRUE,Slicing,https://bulbapedia.bulbagarden.net/wiki/Aqua_Cutter_(move),Increased critical hit ratio.
+Blood Moon,,,,,,,,,,,,
+Matcha Gotcha,,,,,,,,,,,,
+Syrup Bomb,,,,,,,,,,,,
+Ivy Cudgel,Grass,Physical,Single,10,1,100,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Ivy_Cudgel_(move),Increased critical hit ratio. Changes type to match Ogerpon's mask.
+Electro Shot,,,,,,,,,,,,
+Tera Starstorm,,,,,,,,,,,,
+Fickle Beam,,,,,,,,,,,,
+Burning Bulwark,,,,,,,,,,,,
+Thunderclap,,,,,,,,,,,,
+Mighty Cleave,,,,,,,,,,,,
+Tachyon Cutter,,,,,,,,,,,,
+Hard Press,,,,,,,,,,,,
+Dragon Cheer,,,,,,,,,,,,
+Alluring Voice,,,,,,,,,,,,
+Temper Flare,,,,,,,,,,,,
+Supercell Slam,,,,,,,,,,,,
+Psychic Noise,,,,,,,,,,,,
+Upper Hand,,,,,,,,,,,,
+Malignant Chain,,,,,,,,,,,,

@@ -70,7 +70,7 @@ def initialize_data():
 			for row in detailed_moves_reader:
 				detailed_moves_row_count += 1
 				if detailed_moves_row_count > 1:
-					if detailed_moves_row_count <= 3:
+					if detailed_moves_row_count <= 30:
 						detailed_moves_insert = {"name": row[0],
 												 "type": get_fk_id("types", row[1], conn_arg=conn),
 												 "category": row[2],
