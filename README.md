@@ -27,6 +27,9 @@ Currently, the project simply runs on local. To spin up this project on your own
 ### Data Notes
 All data is accurate as of generation 9. The files in `data/` are all sourced from Bulbapedia, with the exception of data added afterwards while testing with actual teams. I used discretion in seeding some of the files, notably `data/held_items.json` - I only included items I thought had any use in competitive.
 
+### Testing
+All tests should be run with `python3 -m pytest` to ensure importing runs properly. Tests within `tests/prod_db_test.py` functionally enforce additional DB schema constraints that cannot be implemented directly within Postgres.
+
 
 ## Future Work
 - "Production" Database
