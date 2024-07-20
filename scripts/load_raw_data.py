@@ -31,7 +31,7 @@ def initialize_data():
 		with open("data/natures.json") as nature_infile:
 			natures = json.load(nature_infile)
 			for nature in natures:
-				conn.execute(text("INSERT INTO natures (name) VALUES ('{}')".format(nature)))
+				conn.execute(text("INSERT INTO natures (name, boosting_stat, decreasing_stat) VALUES ('{}')".format("','".join([nature, natures[nature]["Boosts"], natures[nature]["Decreases"]]))))
 
 		conn.execute(text("DELETE FROM abilities"))
 		conn.execute(text("ALTER SEQUENCE abilities_id_seq RESTART WITH 1"))

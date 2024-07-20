@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS team_references;
 DROP TABLE IF EXISTS teams;
 DROP TABLE IF EXISTS competitive_pokemon;
+DROP TABLE IF EXISTS detailed_moves;
 DROP TABLE IF EXISTS pokemon;
 DROP TABLE IF EXISTS regions;
 DROP TABLE IF EXISTS types;
@@ -10,6 +11,10 @@ DROP TABLE IF EXISTS egg_groups;
 DROP TABLE IF EXISTS held_items;
 DROP TABLE IF EXISTS moves;
 DROP TABLE IF EXISTS regulations;
+
+DROP TYPE IF EXISTS nature_stat;
+DROP TYPE IF EXISTS move_category;
+DROP TYPE IF EXISTS move_targets;
 
 CREATE TABLE regions (
 	id serial primary key,
@@ -21,9 +26,13 @@ CREATE TABLE types (
 	name varchar(255) UNIQUE not null
 );
 
+CREATE TYPE nature_stat as ENUM ('Attack', 'Defense', 'Special Attack', 'Special Defense', 'Speed');
+
 CREATE TABLE natures (
 	id serial primary key,
-	name varchar(255) UNIQUE not null
+	name varchar(255) UNIQUE not null,
+	boosting_stat nature_stat not null,
+	decreasing_stat nature_stat not null
 );
 
 CREATE TABLE abilities (
