@@ -87,6 +87,7 @@ CREATE TABLE detailed_moves (
 	special_categories jsonb,
 	bulbapedia_link varchar not null,
 	additional_effects jsonb,
+	unimplemented boolean
 
 	CONSTRAINT pp_positive_integer CHECK (pp > 0),
 	CONSTRAINT pp_less_than_equal_to_forty CHECK (pp <= 40),

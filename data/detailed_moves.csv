@@ -23,18 +23,18 @@ Mega Kick,Normal,Physical,Single,5,1,120,75,0,TRUE,,https://bulbapedia.bulbagard
 Sand Attack,Ground,Status,Single,15,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Sand_Attack_(move),Lowers target's accuracy by 1 stage.
 Headbutt,Normal,Physical,Single,15,1,70,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Headbutt_(move),30% chance to flinch.
 Horn Attack,Normal,Physical,Single,25,1,65,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Horn_Attack_(move),
-Fury Attack,Normal,Physical,Single,20,*,15,85,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Fury_Attack_(move),Hits target 2-5 times.
+Fury Attack,Normal,Physical,Single,20,,15,85,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Fury_Attack_(move),Hits target 2-5 times.
 Horn Drill,Normal,Physical,Single,5,,,30,0,TRUE,OHKO,https://bulbapedia.bulbagarden.net/wiki/Horn_Drill_(move),Ignores anything that would modify accuracy.
 Tackle,Normal,Physical,Single,35,1,40,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Tackle_(move),
 Body Slam,Normal,Physical,Single,15,1,85,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Body_Slam_(move),"30% chance to paralyze target. Against targets that have used Minimize, always hits and deals double damage."
 Wrap,Normal,Physical,Single,20,1,15,90,0,TRUE,Binding,https://bulbapedia.bulbagarden.net/wiki/Wrap_(move),Binds the target for 4 or 5 turns.
-Take Down,Normal,Physical,Single,20,1,90,85,0,TRUE,Recoil,https://bulbapedia.bulbagarden.net/wiki/Take_Down_(move),Recoil - 1/4 damage dealt.
+Take Down,Normal,Physical,Single,20,1,90,85,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Take_Down_(move),Recoil - 1/4 damage dealt.
 Thrash,Normal,Physical,Self,10,1,120,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Thrash_(move),* (similar to Outrage)
-Double-Edge,Normal,Physical,Single,15,1,120,100,0,TRUE,Recoil,https://bulbapedia.bulbagarden.net/wiki/Double-Edge_(move),Recoil - 1/3 damage dealt.
+Double-Edge,Normal,Physical,Single,15,1,120,100,0,TRUE,,https://bulbapedia.bulbagarden.net/wiki/Double-Edge_(move),Recoil - 1/3 damage dealt.
 Tail Whip,Normal,Status,Opponents,30,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Tail_Whip_(move),Stat Change - Defense -1.
 Poison Sting,Poison,Physical,Single,35,1,15,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Poison_Sting_(move),Poison - 30%.
 Twineedle,Bug,Physical,Single,20,2,25,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Twineedle_(move),Poison - 20% (each hit independently).
-Pin Missile,Bug,Physical,Single,20,*,25,95,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Pin_Missile_(move),Hits target 2-5 times.
+Pin Missile,Bug,Physical,Single,20,,25,95,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Pin_Missile_(move),Hits target 2-5 times.
 Leer,Normal,Status,Opponents,30,,,100,0,FALSE,,https://bulbapedia.bulbagarden.net/wiki/Leer_(move),Lowers Defense of opponents by one.
 Bite,Dark,Physical,Single,25,1,60,100,0,TRUE,Biting,https://bulbapedia.bulbagarden.net/wiki/Bite_(move),Flinch - 30%.
 Growl,Normal,Status,Opponents,40,,,100,0,FALSE,Sound,https://bulbapedia.bulbagarden.net/wiki/Growl_(move),Stat Change - Attack -1.
