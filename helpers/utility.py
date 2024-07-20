@@ -48,6 +48,8 @@ def insert_row(insert, table, conn):
 	values = []
 
 	for key, value in insert.items():
+		if value == "":
+			continue
 		columns.append(key)
 		values.append(str(value))
 

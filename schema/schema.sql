@@ -64,9 +64,41 @@ CREATE TABLE held_items (
 	name varchar(255) UNIQUE not null
 );
 
-CREATE TABLE moves (
+CREATE TABLE moves(
 	id serial primary key,
 	name varchar(255) UNIQUE not null
+);
+
+CREATE TYPE move_category as ENUM ('Physical', 'Special', 'Status');
+CREATE TYPE move_targets as ENUM ('Single', 'Self', 'Opponents', 'Ally and Opponents', 'All', 'Party', 'Team', 'Ally', 'Field - Team', 'Field - Opponents', 'Field');
+
+CREATE TABLE detailed_moves (
+	id serial primary key,
+	name varchar(255) UNIQUE not null,
+	type integer references types on delete cascade not null,
+	category move_category not null,
+	targets move_targets not null,
+	pp integer not null,
+	hits integer,
+	power integer,
+	accuracy integer,
+	priority integer not null,
+	contact boolean not null,
+	special_categories jsonb,
+	bulbapedia_link varchar not null,
+	additional_effects jsonb,
+	unimplemented boolean
+
+	CONSTRAINT pp_positive_integer CHECK (pp > 0),
+	CONSTRAINT pp_less_than_equal_to_forty CHECK (pp <= 40),
+	CONSTRAINT hits_positive_integer CHECK (hits > 0),
+	CONSTRAINT hits_less_than_equal_to_ten CHECK (hits <= 10),
+	CONSTRAINT power_positive_integer CHECK (power > 0),
+	CONSTRAINT power_less_than_equal_to_one_hundred_fifty CHECK (power <= 150),
+	CONSTRAINT accuracy_positive_integer CHECK (accuracy > 0),
+	CONSTRAINT accuracy_less_than_equal_to_one_hundred CHECK (accuracy <= 100),
+	CONSTRAINT priority_greater_than_equal_to_negative_seven CHECK (priority >= -7),
+	CONSTRAINT priority_less_than_equal_to_five CHECK (priority <= 5)
 );
 
 CREATE TABLE regulations (
