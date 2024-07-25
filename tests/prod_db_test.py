@@ -10,7 +10,18 @@ conn = engine.connect()
 
 class TestMoves:
 	def test_valid_special_categories(self):
-		valid_special_categories = ["Punching", "OHKO", "Dance", "Slicing", "Wind", "Binding", "Biting", "Sound"]
+		valid_special_categories = ["Punching", 
+									"OHKO", 
+									"Dance", 
+									"Slicing", 
+									"Wind", 
+									"Binding", 
+									"Biting", 
+									"Sound", 
+									"Powder",
+									"Explosive",
+									"Ball and Bomb",
+									"Aura and Pulse"]
 
 		def valid_func(l):
 			if l == None:
@@ -31,14 +42,29 @@ class TestMoves:
 
 	def test_valid_additional_effects(self):
 		valid_additional_effects = ["status_effect", 
-									"stat_change", 
-									"immunity_bypass", 
+									"stat_change",
 									"charge", 
 									"flinch", 
 									"punish_minimize", 
 									"multihit",
 									"recoil",
-									"fixed_damage"]
+									"fixed_damage",
+									"punish_invulnerable",
+									"weather_accuracy",
+									"recharge",
+									"special_damage",
+									"heal_damage_percentage",
+									"increased_critical_ratio",
+									"binding",
+									"hits_invulnerable",
+									"heal_max_hp_percentage",
+									"disjointed",
+									"set_field_effect",
+									"only_first_turn",
+									"negatively_scale_user_hp",
+									"thaw_user",
+									"thaw_target",
+									"guaranteed_critical"]
 
 		def check_valid_additional_effects(d):
 			if d is None:
@@ -71,7 +97,7 @@ class TestMoves:
 		assert len(df.loc[df["valid_status_effect_keys"] == False].index) == 0
 
 	def test_valid_status(self):
-		valid_statuses = ["Burn", "Paralysis", "Freeze", "Poison", "Sleep", "Confusion"]
+		valid_statuses = ["Burn", "Paralysis", "Freeze", "Poison", "Sleep", "Confusion", "Toxic"]
 
 		def valid_status(d):
 			if type(d) == dict and "status_effect" in d:
@@ -99,8 +125,12 @@ class TestMoves:
 	def test_stat_change_keys(self):
 		def valid_func(d):
 			if type(d) == dict and "stat_change" in d:
-				if not list(sorted(d["stat_change"].keys())) == ["effects", "probability", "stages", "stat"]:
+				if not type(d["stat_change"]) == list:
 					return False
+
+				for sc in d["stat_change"]:
+					if not list(sorted(sc.keys())) == ["effects", "probability", "stages", "stat"]:
+						return False
 			return True
 
 		df = pd.read_sql("SELECT * from detailed_moves", conn)
@@ -109,12 +139,13 @@ class TestMoves:
 		assert len(df.loc[df["valid"] == False].index) == 0
 
 	def test_stat_change_effects(self):
-		valid_values = ["target"]
+		valid_values = ["target", "self"]
 
 		def valid_func(d):
 			if type(d) == dict and "stat_change" in d:
-				if d["stat_change"]["effects"] not in valid_values:
-					return False
+				for sc in d["stat_change"]:
+					if sc["effects"] not in valid_values:
+						return False
 			return True
 
 		df = pd.read_sql("SELECT * from detailed_moves", conn)
@@ -123,12 +154,13 @@ class TestMoves:
 		assert len(df.loc[df["valid"] == False].index) == 0
 
 	def test_stat_change_stat(self):
-		valid_values = ["Attack", "Defense", "Accuracy"]
+		valid_values = ["Attack", "Defense", "Special Attack", "Special Defense", "Speed", "Accuracy", "Evasion", "Critical Hit Ratio", "Omniboost"]
 
 		def valid_func(d):
 			if type(d) == dict and "stat_change" in d:
-				if d["stat_change"]["stat"] not in valid_values:
-					return False
+				for sc in d["stat_change"]:
+					if sc["stat"] not in valid_values:
+						return False
 			return True
 
 		df = pd.read_sql("SELECT * from detailed_moves", conn)
@@ -139,8 +171,9 @@ class TestMoves:
 	def test_stat_change_stages(self):
 		def valid_func(d):
 			if type(d) == dict and "stat_change" in d:
-				if not type(d["stat_change"]["stages"]) == int or d["stat_change"]["stages"] < -1 or d["stat_change"]["stages"] > 2:
-					return False
+				for sc in d["stat_change"]:
+					if not type(sc["stages"]) == int or sc["stages"] < -2 or sc["stages"] > 3:
+						return False
 			return True
 
 		df = pd.read_sql("SELECT * from detailed_moves", conn)
@@ -151,8 +184,9 @@ class TestMoves:
 	def test_stat_change_probability(self):
 		def valid_func(d):
 			if type(d) == dict and "stat_change" in d:
-				if not type(d["stat_change"]["probability"]) in [float, int] or d["stat_change"]["probability"] <= 0 or d["stat_change"]["probability"] > 1:
-					return False
+				for sc in d["stat_change"]:
+					if not type(sc["probability"]) in [float, int] or sc["probability"] <= 0 or sc["probability"] > 1:
+						return False
 			return True
 
 		df = pd.read_sql("SELECT * from detailed_moves", conn)
@@ -183,6 +217,10 @@ class TestMoves:
 					return True
 				elif s["additional_effects"] and "multihit" in s["additional_effects"]:
 					return True
+				elif s["additional_effects"] and "disjointed" in s["additional_effects"]:
+					return True
+				elif s["unimplemented"] == True:
+					return True
 				else:
 					return False
 			return True
@@ -198,6 +236,12 @@ class TestMoves:
 				if s["special_categories"] and "OHKO" in s["special_categories"]:
 					return True
 				elif s["additional_effects"] and "fixed_damage" in s["additional_effects"]:
+					return True
+				elif s["additional_effects"] and "special_damage" in s["additional_effects"]:
+					return True
+				elif s["additional_effects"] and "disjointed" in s["additional_effects"]:
+					return True
+				elif s["unimplemented"] == True:
 					return True
 				else:
 					return False
@@ -292,7 +336,7 @@ class TestMoves:
 	def test_valid_fixed_damage_value(self):
 		def valid_func(d):
 			if type(d) == dict and "fixed_damage" in d:
-				if not type(d["fixed_damage"]) == int or d["fixed_damage"] <= 0 or d["fixed_damage"] > 20:
+				if not type(d["fixed_damage"]) == int or d["fixed_damage"] <= 0 or d["fixed_damage"] > 50:
 					return False
 			return True
 
@@ -301,17 +345,139 @@ class TestMoves:
 
 		assert len(df.loc[df["valid"] == False].index) == 0
 
+	def test_valid_special_damage_value(self):
+		valid_values = ["target_weight", 
+						"halve_hp", 
+						"self_hp_low", 
+						"pain_split", 
+						"endeavor", 
+						"relative_speed_low", 
+						"relative_speed", 
+						"relative_weight",
+						"target_hp"]
 
+		def valid_func(d):
+			if type(d) == dict and "special_damage" in d:
+				if d["special_damage"] not in valid_values:
+					return False
+			return True
 
+		df = pd.read_sql("SELECT * from detailed_moves", conn)
+		df['valid'] = df["additional_effects"].apply(lambda x: valid_func(x))
 
+		assert len(df.loc[df["valid"] == False].index) == 0
 
+	def test_valid_heal_damage_percentage_value(self):
+		def valid_func(d):
+			if type(d) == dict and "heal_damage_percentage" in d:
+				if not type(d["heal_damage_percentage"]) == float or d["heal_damage_percentage"] <= 0 or d["heal_damage_percentage"] > 0.75:
+					return False
+			return True
 
+		df = pd.read_sql("SELECT * from detailed_moves", conn)
+		df['valid'] = df["additional_effects"].apply(lambda x: valid_func(x))
 
+		assert len(df.loc[df["valid"] == False].index) == 0
 
+	def test_valid_weather_accuracy_value(self):
+		valid_values = ["snow", "rain"]
 
+		def valid_func(d):
+			if type(d) == dict and "weather_accuracy" in d:
+				if d["weather_accuracy"] not in valid_values:
+					return False
+			return True
 
+		df = pd.read_sql("SELECT * from detailed_moves", conn)
+		df['valid'] = df["additional_effects"].apply(lambda x: valid_func(x))
 
-		
+		assert len(df.loc[df["valid"] == False].index) == 0
+
+	def test_valid_punish_invulnerable_value(self):
+		valid_values = ["air", "underwater", "underground"]
+
+		def valid_func(d):
+			if type(d) == dict and "punish_invulnerable" in d:
+				if d["punish_invulnerable"] not in valid_values:
+					return False
+			return True
+
+		df = pd.read_sql("SELECT * from detailed_moves", conn)
+		df['valid'] = df["additional_effects"].apply(lambda x: valid_func(x))
+
+		assert len(df.loc[df["valid"] == False].index) == 0
+
+	def test_valid_hits_invulnerable_value(self):
+		valid_values = ["air"]
+
+		def valid_func(d):
+			if type(d) == dict and "hits_invulnerable" in d:
+				if d["hits_invulnerable"] not in valid_values:
+					return False
+			return True
+
+		df = pd.read_sql("SELECT * from detailed_moves", conn)
+		df['valid'] = df["additional_effects"].apply(lambda x: valid_func(x))
+
+		assert len(df.loc[df["valid"] == False].index) == 0
+
+	def test_valid_heal_max_hp_percentage_value(self):
+		def valid_func(d):
+			if type(d) == dict and "heal_max_hp_percentage" in d:
+				if not type(d["heal_max_hp_percentage"]) == float or d["heal_max_hp_percentage"] <= 0 or d["heal_max_hp_percentage"] > 0.5:
+					return False
+			return True
+
+		df = pd.read_sql("SELECT * from detailed_moves", conn)
+		df['valid'] = df["additional_effects"].apply(lambda x: valid_func(x))
+
+		assert len(df.loc[df["valid"] == False].index) == 0
+
+	def test_valid_disjointed_value(self):
+		def valid_func(d):
+			if type(d) == dict and "disjointed" in d:
+				if not type(d["disjointed"]) == list:
+					return False
+				else:
+					for val in d["disjointed"]:
+						if not type(val) == int or val <= 0 or val > 60:
+							return False
+			return True
+
+		df = pd.read_sql("SELECT * from detailed_moves", conn)
+		df['valid'] = df["additional_effects"].apply(lambda x: valid_func(x))
+
+		assert len(df.loc[df["valid"] == False].index) == 0
+
+	def test_valid_set_field_effect_keys(self):
+		def valid_func(d):
+			if type(d) == dict and "set_field_effect" in d:
+				if not list(sorted(d["set_field_effect"].keys())) == ["name", "type"]:
+					return False
+			return True
+
+		df = pd.read_sql("SELECT * from detailed_moves", conn)
+		df['valid'] = df["additional_effects"].apply(lambda x: valid_func(x))
+
+		assert len(df.loc[df["valid"] == False].index) == 0
+
+	def test_valid_field_effect_dict(self):
+		def valid_func(d):
+			if type(d) == dict and "set_field_effect" in d:
+				if d["set_field_effect"]["type"] == "weather" and d["set_field_effect"]["name"] in ["Sandstorm", "Rain", "Sun", "Snow"]:
+					return True
+				elif d["set_field_effect"]["type"] == "speed_control" and d["set_field_effect"]["name"] in ["tailwind"]:
+					return True
+				elif d["set_field_effect"]["type"] == "terrain" and d["set_field_effect"]["name"] in ["Grassy Terrain", "Misty Terrain", "Electric Terrain", "Psychic Terrain"]:
+					return True
+				else:
+					return False
+			return True
+
+		df = pd.read_sql("SELECT * from detailed_moves", conn)
+		df['valid'] = df["additional_effects"].apply(lambda x: valid_func(x))
+
+		assert len(df.loc[df["valid"] == False].index) == 0
 
 		
 

@@ -73,26 +73,25 @@ def initialize_data():
 			for row in detailed_moves_reader:
 				detailed_moves_row_count += 1
 				if detailed_moves_row_count > 1:
-					if detailed_moves_row_count <= 44:
-						detailed_moves_insert = {"name": row[0],
-												 "type": get_fk_id("types", row[1], conn_arg=conn),
-												 "category": row[2],
-												 "targets": row[3],
-												 "pp": row[4],
-												 "hits": row[5],
-												 "power": row[6],
-												 "accuracy": row[7],
-												 "priority": row[8],
-												 "contact": row[9],
-												 "bulbapedia_link": row[11]
-											    }
-						if len(row[10]) > 0:
-							detailed_moves_insert["special_categories"] = json.dumps(row[10].split(","))
-						if row[0] in move_effects:
-							detailed_moves_insert["additional_effects"] = json.dumps(move_effects[row[0]])
-						if row[0] in unimplemented_moves:
-							detailed_moves_insert["unimplemented"] = True
-						insert_row(detailed_moves_insert, "detailed_moves", conn)
+					detailed_moves_insert = {"name": row[0].replace("'", "''"),
+											 "type": get_fk_id("types", row[1], conn_arg=conn),
+											 "category": row[2],
+											 "targets": row[3],
+											 "pp": row[4],
+											 "hits": row[5],
+											 "power": row[6],
+											 "accuracy": row[7],
+											 "priority": row[8],
+											 "contact": row[9],
+											 "bulbapedia_link": row[11]
+										    }
+					if len(row[10]) > 0:
+						detailed_moves_insert["special_categories"] = json.dumps(list(map(lambda x: x.strip(), row[10].split(","))))
+					if row[0] in move_effects:
+						detailed_moves_insert["additional_effects"] = json.dumps(move_effects[row[0]])
+					if row[0] in unimplemented_moves:
+						detailed_moves_insert["unimplemented"] = True
+					insert_row(detailed_moves_insert, "detailed_moves", conn)
 
 		conn.execute(text("DELETE FROM regulations"))
 		conn.execute(text("ALTER SEQUENCE regulations_id_seq RESTART WITH 1"))
