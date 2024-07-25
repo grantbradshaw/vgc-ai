@@ -3,11 +3,11 @@ from sqlalchemy import text
 
 from helpers.establish_db_connection import get_db_engine
 
-# helper function to get id for simple reference tables
+# helper function to get id for a name column
 # by default, this function expects that finding a result is desired
 # if allow_none is set to True, a return value of None is permitted
 def get_fk_id(table, name, conn_arg=None, allow_none=False):
-	if table not in ["regions", "types", "natures", "abilities", "egg_groups", "held_items", "moves", "regulations"]:
+	if table not in ["regions", "types", "natures", "abilities", "egg_groups", "held_items", "regulations", "detailed_moves"]:
 		raise Exception("Table {} does not cohere to an id / name schema.".format(table))
 
 	# allow_none is intended to allow failing to find a name

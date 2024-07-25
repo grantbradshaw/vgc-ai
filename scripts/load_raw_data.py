@@ -55,13 +55,6 @@ def initialize_data():
 			for held_item in held_items:
 				conn.execute(text("INSERT INTO held_items (name) VALUES ('{}')".format(held_item.replace("'", "''"))))
 
-		conn.execute(text("DELETE FROM moves"))
-		conn.execute(text("ALTER SEQUENCE moves_id_seq RESTART WITH 1"))
-		with open("data/moves.csv") as moves_infile:
-			moves_reader = csv.reader(moves_infile)
-			for row in moves_reader:
-				conn.execute(text("INSERT INTO moves (name) VALUES ('{}')".format(row[0].replace("'", "''"))))
-
 		conn.execute(text("DELETE FROM detailed_moves"))
 		conn.execute(text("ALTER SEQUENCE detailed_moves_id_seq RESTART WITH 1"))
 		with open("data/detailed_moves.csv") as detailed_moves_infile:
