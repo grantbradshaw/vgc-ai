@@ -419,7 +419,7 @@
 									"probability": 1}]},
 	"Gyro Ball": {"special_damage": "relative_speed_low"},
 	"Tailwind": {"set_field_effect": {"type": "speed_control",
-									  "name": "tailwind"}},
+									  "name": "Tailwind"}},
 	"Close Combat": {"stat_change": [{"effects": "self",
 									"stat": "Defense",
 									"stages": -1,
@@ -944,8 +944,21 @@
 					  "heal_damage_percentage": 0.5},
 	"Hard Press": {"special_damage": "target_hp"},
 	"Malignant Chain": {"status_effect": {"status": "Toxic",
-										  "probability": 0.5}}
-
+										  "probability": 0.5}},
+	"Protect": {"protect": "all"},
+	"Pollen Puff": {"unique_move": "Pollen Puff"},
+	"Rage Powder": {"redirects": true},
+	"U-turn": {"switch_out": true},
+	"Ivy Cudgel": {"increased_critical_ratio": true,
+				   "unique_move": "Ivy Cudgel"},
+	"Follow Me": {"redirects": true},
+	"Spiky Shield": {"protect": "all",
+					 "unique_move": "Spiky Shield"},
+	"Trick Room": {"set_field_effect": {"type": "speed_control",
+									   	"name": "Trick Room"}},
+	"Sucker Punch": {"sucker": true},
+	"Burning Bulwark": {"protect": "damaging",
+						"unique_move": "Burning Bulwark"}
 }
 
 

@@ -64,7 +64,12 @@ class TestMoves:
 									"negatively_scale_user_hp",
 									"thaw_user",
 									"thaw_target",
-									"guaranteed_critical"]
+									"guaranteed_critical",
+									"protect",
+									"unique_move",
+									"redirects",
+									"switch_out",
+									"sucker"]
 
 		def check_valid_additional_effects(d):
 			if d is None:
@@ -466,7 +471,7 @@ class TestMoves:
 			if type(d) == dict and "set_field_effect" in d:
 				if d["set_field_effect"]["type"] == "weather" and d["set_field_effect"]["name"] in ["Sandstorm", "Rain", "Sun", "Snow"]:
 					return True
-				elif d["set_field_effect"]["type"] == "speed_control" and d["set_field_effect"]["name"] in ["tailwind"]:
+				elif d["set_field_effect"]["type"] == "speed_control" and d["set_field_effect"]["name"] in ["Tailwind", "Trick Room"]:
 					return True
 				elif d["set_field_effect"]["type"] == "terrain" and d["set_field_effect"]["name"] in ["Grassy Terrain", "Misty Terrain", "Electric Terrain", "Psychic Terrain"]:
 					return True
@@ -479,6 +484,33 @@ class TestMoves:
 
 		assert len(df.loc[df["valid"] == False].index) == 0
 
+	def test_valid_protect_type_value(self):
+		valid_values = ["all", "damaging"]
+
+		def valid_func(d):
+			if type(d) == dict and "protect" in d:
+				if d["protect"] not in valid_values:
+					return False
+			return True
+
+		df = pd.read_sql("SELECT * from detailed_moves", conn)
+		df['valid'] = df["additional_effects"].apply(lambda x: valid_func(x))
+
+		assert len(df.loc[df["valid"] == False].index) == 0
+
+	def test_valid_unique_move_value(self):
+		valid_values = ["Pollen Puff", "Ivy Cudgel", "Spiky Shield", "Burning Bulwark"]
+
+		def valid_func(d):
+			if type(d) == dict and "unique_move" in d:
+				if d["unique_move"] not in valid_values:
+					return False
+			return True
+
+		df = pd.read_sql("SELECT * from detailed_moves", conn)
+		df['valid'] = df["additional_effects"].apply(lambda x: valid_func(x))
+
+		assert len(df.loc[df["valid"] == False].index) == 0
 		
 
 

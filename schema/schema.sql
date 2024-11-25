@@ -73,7 +73,7 @@ CREATE TABLE held_items (
 );
 
 CREATE TYPE move_category as ENUM ('Physical', 'Special', 'Status');
-CREATE TYPE move_targets as ENUM ('Single', 'Self', 'Opponents',  'Self or Ally','Ally and Opponents', 'Opponent', 'All', 'Party', 'Team', 'Ally', 'Field - Team', 'Field - Opponents', 'Field');
+CREATE TYPE move_targets as ENUM ('Single', 'Self', 'Opponents',  'Self or Ally', 'Ally and Opponents', 'Opponent', 'All', 'Party', 'Team', 'Ally', 'Field - Team', 'Field - Opponents', 'Field');
 
 CREATE TABLE detailed_moves (
 	id serial primary key,
