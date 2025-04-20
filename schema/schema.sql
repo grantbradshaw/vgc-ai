@@ -104,9 +104,21 @@ CREATE TABLE detailed_moves (
 	CONSTRAINT priority_less_than_equal_to_five CHECK (priority <= 5)
 );
 
+CREATE TABLE pokemon_moves (
+	id serial primary key,
+	pokemon_id integer references pokemon on delete cascade not null,
+	detailed_move_id integer references detailed_moves on delete cascade not null
+);
+
 CREATE TABLE regulations (
 	id serial primary key,
 	name varchar(1) UNIQUE not null
+);
+
+CREATE TABLE regulation_pokemon (
+	id serial primary key,
+	regulation_id integer references regulations on delete cascade not null,
+	pokemon_id integer references pokemon on delete cascade not null
 );
 
 CREATE TABLE competitive_pokemon (
