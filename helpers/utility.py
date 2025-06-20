@@ -3,11 +3,11 @@ from sqlalchemy import text
 
 from helpers.establish_db_connection import get_db_engine
 
-# helper function to get id for simple reference tables
+# helper function to get id for a name column
 # by default, this function expects that finding a result is desired
 # if allow_none is set to True, a return value of None is permitted
 def get_fk_id(table, name, conn_arg=None, allow_none=False):
-	if table not in ["regions", "types", "natures", "abilities", "egg_groups", "held_items", "moves", "regulations"]:
+	if table not in ["regions", "types", "natures", "abilities", "egg_groups", "held_items", "regulations", "detailed_moves"]:
 		raise Exception("Table {} does not cohere to an id / name schema.".format(table))
 
 	# allow_none is intended to allow failing to find a name
@@ -92,4 +92,25 @@ def get_pokemon_id(name, region_id, variant, conn_arg=None):
 		conn.close()
 
 	return pokemon_id
+
+def generate_unique_team_sequences():
+	team_seqs = []
+
+	for a in range(1,7):
+		for b in return_remaining_values([a]):
+			for c in return_remaining_values([a,b]):
+				for d in return_remaining_values([a,b,c]):
+					team_seqs.append([a,b,c,d])
+
+	# len(team_seqs) == 360, which is correct, as P(6,4) = 360
+
+	return team_seqs
+
+def return_remaining_values(l):
+	remaining_values = [1,2,3,4,5,6]
+
+	for i in l:
+		remaining_values.remove(i)
+
+	return remaining_values
 

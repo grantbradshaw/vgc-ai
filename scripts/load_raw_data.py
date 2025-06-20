@@ -31,7 +31,7 @@ def initialize_data():
 		with open("data/natures.json") as nature_infile:
 			natures = json.load(nature_infile)
 			for nature in natures:
-				conn.execute(text("INSERT INTO natures (name) VALUES ('{}')".format(nature)))
+				conn.execute(text("INSERT INTO natures (name, boosting_stat, decreasing_stat) VALUES ('{}')".format("','".join([nature, natures[nature]["Boosts"], natures[nature]["Decreases"]]))))
 
 		conn.execute(text("DELETE FROM abilities"))
 		conn.execute(text("ALTER SEQUENCE abilities_id_seq RESTART WITH 1"))
@@ -55,13 +55,6 @@ def initialize_data():
 			for held_item in held_items:
 				conn.execute(text("INSERT INTO held_items (name) VALUES ('{}')".format(held_item.replace("'", "''"))))
 
-		conn.execute(text("DELETE FROM moves"))
-		conn.execute(text("ALTER SEQUENCE moves_id_seq RESTART WITH 1"))
-		with open("data/moves.csv") as moves_infile:
-			moves_reader = csv.reader(moves_infile)
-			for row in moves_reader:
-				conn.execute(text("INSERT INTO moves (name) VALUES ('{}')".format(row[0].replace("'", "''"))))
-
 		conn.execute(text("DELETE FROM detailed_moves"))
 		conn.execute(text("ALTER SEQUENCE detailed_moves_id_seq RESTART WITH 1"))
 		with open("data/detailed_moves.csv") as detailed_moves_infile:
@@ -73,26 +66,25 @@ def initialize_data():
 			for row in detailed_moves_reader:
 				detailed_moves_row_count += 1
 				if detailed_moves_row_count > 1:
-					if detailed_moves_row_count <= 44:
-						detailed_moves_insert = {"name": row[0],
-												 "type": get_fk_id("types", row[1], conn_arg=conn),
-												 "category": row[2],
-												 "targets": row[3],
-												 "pp": row[4],
-												 "hits": row[5],
-												 "power": row[6],
-												 "accuracy": row[7],
-												 "priority": row[8],
-												 "contact": row[9],
-												 "bulbapedia_link": row[11]
-											    }
-						if len(row[10]) > 0:
-							detailed_moves_insert["special_categories"] = json.dumps(row[10].split(","))
-						if row[0] in move_effects:
-							detailed_moves_insert["additional_effects"] = json.dumps(move_effects[row[0]])
-						if row[0] in unimplemented_moves:
-							detailed_moves_insert["unimplemented"] = True
-						insert_row(detailed_moves_insert, "detailed_moves", conn)
+					detailed_moves_insert = {"name": row[0].replace("'", "''"),
+											 "type": get_fk_id("types", row[1], conn_arg=conn),
+											 "category": row[2],
+											 "targets": row[3],
+											 "pp": row[4],
+											 "hits": row[5],
+											 "power": row[6],
+											 "accuracy": row[7],
+											 "priority": row[8],
+											 "contact": row[9],
+											 "bulbapedia_link": row[11]
+										    }
+					if len(row[10]) > 0:
+						detailed_moves_insert["special_categories"] = json.dumps(list(map(lambda x: x.strip(), row[10].split(","))))
+					if row[0] in move_effects:
+						detailed_moves_insert["additional_effects"] = json.dumps(move_effects[row[0]])
+					if row[0] in unimplemented_moves:
+						detailed_moves_insert["unimplemented"] = True
+					insert_row(detailed_moves_insert, "detailed_moves", conn)
 
 		conn.execute(text("DELETE FROM regulations"))
 		conn.execute(text("ALTER SEQUENCE regulations_id_seq RESTART WITH 1"))

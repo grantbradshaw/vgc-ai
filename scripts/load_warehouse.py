@@ -67,13 +67,13 @@ def load_warehouse():
 			on cp.id = tr.cp_id
 		join regulations rg
 			on tr.regulation_id = rg.id
-		join moves m1
+		join detailed_moves m1
 			on cp.move_1_id = m1.id
-		left join moves m2
+		left join detailed_moves m2
 			on cp.move_2_id = m2.id
-		left join moves m3
+		left join detailed_moves m3
 			on cp.move_3_id = m3.id
-		left join moves m4
+		left join detailed_moves m4
 			on cp.move_4_id = m4.id
 		"""
 

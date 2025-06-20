@@ -44,6 +44,7 @@ All tests should be run with `python3 -m pytest` to ensure importing runs proper
 - Add support for regulation G (code has not been rigorously tested against regulation G pastes - i.e. Calyrex is known to error with the ability scraped from PokePastes).
 - Support better "ETL" patterns for data warehouse - for instance, currently a bit of an anti-pattern (wipes table and full loads), but if we actually tracked changes, we could use better patterns (DELETE removed / updated rows, then INSERT the updated rows / new rows).
 - Refactor scripts to use the `pd.read_sql` pattern used in `scripts/load_warehouse.py`.
+- Ensure no duplicated moves in competitive_pokemon
 
 ## References
 - Bulbapedia, under this [License](https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Copyrights)

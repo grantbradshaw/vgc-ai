@@ -171,7 +171,7 @@ def insert_competitive_pokemon(conn, pokemon_data):
 	move_ids = []
 	for move in pokemon_data["moves"]:
 		# by this point, empty move slots are expected to have been filtered out, so we don't allow_none
-		move_id = get_fk_id("moves", move, conn_arg=conn)
+		move_id = get_fk_id("detailed_moves", move, conn_arg=conn)
 		move_ids.append(move_id)
 
 	# now, we check whether this competitive_pokemon exists
