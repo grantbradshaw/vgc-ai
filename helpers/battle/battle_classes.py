@@ -193,9 +193,3 @@ class Pokemon:
 			
 			self.moves = moves
 			self.terastallized = False
-
-
-
-
-
-
